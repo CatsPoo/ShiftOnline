@@ -1,0 +1,17 @@
+<div class="buttons_bar">
+    <button class="btn btn-success add_bullet_btn" (click)="addBullet()">Add bullet</button>
+    <button class="btn btn-primary save_all_bullets_btn" (click)="saveAllBullets()">Save all bullets</button>
+</div>
+
+<ul>
+    <li *ngFor="let bullet of this.bullets">
+        <div class=bullet_item>
+            <app-bullet [bulletData]="bullet"></app-bullet>
+            <div class="bullet_settings">
+                <button class="btn btn-sm btn-primary save_bullet_btn" id="save_bullet_{{bullet.id}}" (click)="saveBullet(bullet)"><span>Save</span></button><br>
+                <button class="btn btn-sm btn-danger remove_bullet_btn" id="remove_bullet_{{bullet.id}}" (click)="removeBullet(bullet)"><span>Remove</span></button><br>
+                <button class="btn btn-sm btn-secondary edit_bullet_btn" id="edit_bullet_{{bullet.id}}"><span>Edit</span></button>
+            </div>
+        </div>
+    </li>
+</ul>

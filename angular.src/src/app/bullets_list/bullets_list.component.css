@@ -1,0 +1,27 @@
+
+.buttons_bar{
+    margin-top: 2%;
+    margin-left: 3%;
+}
+.add_bullet_btn{
+    float: left;
+}
+
+.save_all_bullets_btn{
+    margin-left: 1%;
+}
+
+.bullet_settings{
+    margin-top: 4%;
+    float: left;
+    width: 7%;
+    height: 100%;
+}
+
+.save_bullet_btn, .edit_bullet_btn, .remove_bullet_btn{
+    width: 90%;
+}
+
+.bullet_item{
+    height: 100%;
+}

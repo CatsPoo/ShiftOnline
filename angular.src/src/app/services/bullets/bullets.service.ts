@@ -1,13 +1,9 @@
-import { TimeAndDateService } from './../time_and_date/time-and-date.service';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BulletsService {
-  private timeService: TimeAndDateService;
 
-  constructor(timeService) {
-    this.timeService=timeService;
-   }
+  constructor() { }
 
   getBullets() {
     return [
@@ -15,27 +11,22 @@ export class BulletsService {
        //new Bullet(1,'second','2/2/1111','3/2/2222','red',[new BulletContent('','')]),
     ];
   }
-  addBullet(bullet){ //add new bullet to db
-    console.log('TODO add bullet to DB'); 
+
+  saveBullet(bulletId,newContent){
+      console.log('TODO save new content of module on DB');
   }
 
-  removeBullet(id){ //remove bullet from db
-    console.log('Remove bullet: '+id+' from DB');
+  removeBullet(bulletID){
+      console.log('TOTO remove bullet frm DB');
   }
-  saveBullet(id,newContant){ //add new content to DB
-    console.log('TODO save bullet number: '+id+"to DB");
-    //this.timeService.getCurrentTime();
-  }
-
-  editBulletName(id,newName){ //change bullet name ob db
-    console.log('TODO save the new name: '+newName+' to DB')
+  addBullet(newBullet){
+    console.log('TODO add bullet to DB')
   }
 
 }
 
 export class Bullet{
-  constructor(
-    private _id:number,
+  constructor(private _id:number,
     private _name:string,
     private _dateOfCreation:string,
     private _lastUpdate:string,

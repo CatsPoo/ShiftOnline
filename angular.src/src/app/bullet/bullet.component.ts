@@ -15,7 +15,6 @@ export class BulletComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.bullet);
     this.currentContent= this.bullet.content.length-1;
   }
 

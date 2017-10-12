@@ -36,19 +36,6 @@ textarea{
     width: 100%;
 }
 
-.right_side_of_textarea, .left_side_of_textarea{
-height: 100%;
-
-margin-top: 3%;
-}
-
-.left_side_of_textarea{
-    float: left;
-}
-.right_side_of_textarea{
-    float: left;
-}
-
 .left_arrow, .right_arrow{
     height: 200%;
 }
@@ -62,4 +49,8 @@ margin-top: 3%;
 
 textarea{
     resize: vertical;
+}
+
+.last_update_tag, .creation_time_tag{
+    font-size: 15px;
 }

@@ -8,9 +8,10 @@ import { BulletsListComponent } from './bullets_list/bullets_list.component';
 import { BulletComponent } from './bullet/bullet.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ManpowerStrengthComponent } from './manpower-strength/manpower-strength.component';
+import { HomeComponent } from './home/home.component';
 
 const appRoute:Routes=[
- // {path:'',component: AppComponent},
+  {path:'',component: HomeComponent},
   {path:'bullets-list',component: BulletsListComponent},
   {path:'manpower-strength',component: ManpowerStrengthComponent},
 ];
@@ -21,7 +22,8 @@ const appRoute:Routes=[
     BulletsListComponent,
     BulletComponent,
     NavBarComponent,
-    ManpowerStrengthComponent
+    ManpowerStrengthComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

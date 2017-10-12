@@ -1,3 +1,4 @@
+import { Routes } from '@angular/router';
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -42,6 +43,15 @@ app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
+});
+
+app.post('/getTime',(req,res)=>{
+  let date=new Date();
+  res.json({
+    year: date.getFullYear,
+    mounth:date.getMonth,
+    day:date.getDay
+  });
 });
 
 module.exports = app;

@@ -9,8 +9,11 @@ import {BulletsService, Bullet, BulletContent} from './../services/bullets/bulle
 export class BulletsListComponent implements OnInit {
 
   private bullets;
-  constructor(service: BulletsService) { 
-    this.bullets=service.getBullets();
+  private service:BulletsService;
+
+  constructor(service: BulletsService) {
+    this.service=service; 
+    this.bullets=this.service.getBullets();
   }
 
   ngOnInit() {
@@ -18,16 +21,25 @@ export class BulletsListComponent implements OnInit {
 
   addBullet()
   {
-    this.bullets.push(new Bullet(this.bullets.length,'New bulet','4/4/4444','6/6/6666','green',[new BulletContent('','')]));
+    let newBullet:Bullet=new Bullet(this.bullets.length,'New bulet','4/4/4444','6/6/6666','green',[new BulletContent('','')]);
+    this.bullets.push(newBullet);
+    this.service.addBullet(newBullet);
   }
 
   removeBullet(node){
     let index=this.bullets.indexOf(node);
     this.bullets.splice(index, 1);
+    this.service.removeBullet(node.id);
   }
 
+  saveBullet(bullet){
+    this.service.saveBullet(bullet.id,bullet.BulletContent);
+    this.service.saveBullet(bullet.id,'TODO get bellet content');
+  }
   saveAllBullets(){
-    
+    this.bullets.forEach(element => {
+      this.saveBullet(element);
+    });
   }
 
 }

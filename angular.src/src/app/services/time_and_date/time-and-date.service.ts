@@ -12,7 +12,7 @@ export class TimeAndDateService {
    }
 
   getCurrentTime():string{
-    return 'err';
+    return 'TODO get date from server';
   }
 
 }

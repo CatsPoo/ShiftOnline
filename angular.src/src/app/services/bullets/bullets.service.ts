@@ -21,6 +21,7 @@ export class BulletsService {
   }
   addBullet(newBullet){
     console.log('TODO add bullet to DB')
+    console.log(newBullet);
   }
 
 }

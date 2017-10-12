@@ -23,5 +23,14 @@ router.post('/addBullet', function(req, res, next) {
 
 });
 
+router.post('/getTime',function(req,res,next){
+  let date=new Date();
+  res.json({
+    year: date.getFullYear(),
+    mounth: (date.getMonth()+1),
+    day:date.getDate()
+  });
+});
+
 
 module.exports = router;

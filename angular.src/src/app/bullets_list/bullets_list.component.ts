@@ -9,7 +9,7 @@ import { BulletsService, Bullet, BulletContent } from './../services/bullets/bul
 })
 export class BulletsListComponent implements OnInit {
 
-  private bullets;
+  private bullets=[];
   private bulletsService: BulletsService;
   private timeAndDateService: TimeAndDateService;
 
@@ -17,9 +17,12 @@ export class BulletsListComponent implements OnInit {
     this.bulletsService = service;
     this.timeAndDateService = timeAndDateService;
 
-    this.bullets = this.bulletsService.getBullets().subscribe(res => {
+    this.bulletsService.getBullets().subscribe(res => {
       res.bullets.forEach(element => {
-        this.bullets = res.bullets;
+        let tempBullet=new Bullet(element.name,element.dateOfCreation,element.lastUpdate,element.color,element.content);
+        tempBullet.id=element._id;
+        console.log(tempBullet+'temp');
+        this.bullets.push(tempBullet);
       });
     });
   }
@@ -58,6 +61,7 @@ export class BulletsListComponent implements OnInit {
   }
   saveBullet(bullet) {
     this.bulletsService.saveBullet(bullet.id, 'TODO getnew content');
+    console.log(bullet);
   }
   saveAllBullets() {
     this.bullets.forEach(element => {

@@ -1,6 +1,6 @@
 import { TimeAndDateService } from './../services/time_and_date/time-and-date.service';
 import { Component, OnInit } from '@angular/core';
-import {BulletsService, Bullet, BulletContent} from './../services/bullets/bullets.service';
+import { BulletsService, Bullet, BulletContent } from './../services/bullets/bullets.service';
 
 @Component({
   selector: 'app-bullets_list',
@@ -10,50 +10,57 @@ import {BulletsService, Bullet, BulletContent} from './../services/bullets/bulle
 export class BulletsListComponent implements OnInit {
 
   private bullets;
-  private bulletsService:BulletsService;
-  private timeAndDateService:TimeAndDateService;
+  private bulletsService: BulletsService;
+  private timeAndDateService: TimeAndDateService;
 
-  constructor(service: BulletsService,timeAndDateService:TimeAndDateService) { 
-    this.bulletsService=service;
-    this.timeAndDateService=timeAndDateService;
+  constructor(service: BulletsService, timeAndDateService: TimeAndDateService) {
+    this.bulletsService = service;
+    this.timeAndDateService = timeAndDateService;
   }
 
   ngOnInit() {
-    this.bullets=this.bulletsService.getBullets().subscribe(res=>{
+    this.bullets = this.bulletsService.getBullets().subscribe(res => {
       res.bullets.forEach(element => {
-        this.bullets=res.bullets;
+        this.bullets = res.bullets;
       });
     });
   }
 
-  addBullet()
-  {
-    this.timeAndDateService.getCurrentTime().subscribe(res=>{ //get current time from server
+  addBullet() {
+    this.timeAndDateService.getCurrentTime().subscribe(res => { //get current time from server
 
-      let date:string=res.day+'/'+res.mounth+'/'+res.year;//create new date sring from the response values
-      let newBullet:Bullet=new Bullet('New bullet',date,date,'green',[new BulletContent(date,'')]);//create new bullet with the new data
-      this.bulletsService.addBullet(newBullet).subscribe(res=>{//push the bullet to the server
+      let date: string = res.day + '/' + res.mounth + '/' + res.year;//create new date sring from the response values
+      let newBullet: Bullet = new Bullet('New bullet', date, date, 'green', [new BulletContent(date, '')]);//create new bullet with the new data
+      this.bulletsService.addBullet(newBullet).subscribe(res => {//push the bullet to the server
         console.log(res.msg);//print the response
-        if(res.succsess){
-          newBullet.id=res.id; //get the id from the server
+        if (res.succsess) {
+          newBullet.id = res.id; //get the id from the server
           this.bullets.push(newBullet);
         }
       });
     });
-  
+
   }
 
-  removeBullet(node){
-    let index=this.bullets.indexOf(node);
-    this.bullets.splice(index, 1);
-    this.bulletsService.removeBullet(node);
+  removeBullet(node) {
+    this.bulletsService.removeBullet(node._id).subscribe(res => {
+      console.log(res.msg);
+      if (res.succsess) {
+        //remove seccess from the db
+        let index = this.bullets.indexOf(node);
+        this.bullets.splice(index, 1);
+        this.bulletsService.removeBullet(node);
+      }
+    });
+
+
   }
-  saveBullet(bullet){
-    this.bulletsService.saveBullet(bullet.id,'TODO getnew content');
+  saveBullet(bullet) {
+    this.bulletsService.saveBullet(bullet.id, 'TODO getnew content');
   }
-  saveAllBullets(){
+  saveAllBullets() {
     this.bullets.forEach(element => {
-        this.saveBullet(element);      
+      this.saveBullet(element);
     });
   }
 

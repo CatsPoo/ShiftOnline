@@ -34,6 +34,18 @@ router.post('/getAllBullets', function(req, res, next) {
 
 });
 
+router.post('/removeBullet',function(req,res,next){
+  let id=req.body.id;
+  bullet.removeBullet(id,(err,bullet)=>{
+    if(err){
+      res.json({succsess: false, msg:'Failed to remove bullet'+err});
+    }
+    else{
+      res.json({succsess: true, msg:'Bullet removed Seccessfully'});
+    }
+  });
+});
+
 router.post('/getTime',function(req,res,next){
   let date=new Date();
   res.json({

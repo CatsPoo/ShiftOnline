@@ -41,3 +41,8 @@ module.exports.addContentToBullet=function(bulletID,newContent,callback){
     Bullet.findById(id,(err,bullet)=>{
     });
 }
+
+module.exports.removeBullet=function(bulletID,callback){
+    console.log(bulletID);
+    this.findById(bulletID).remove(callback);
+}

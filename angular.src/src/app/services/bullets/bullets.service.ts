@@ -23,7 +23,10 @@ export class BulletsService {
   }
 
   removeBullet(bulletID){
-      console.log('TOTO remove bullet frm DB');
+      console.log(bulletID+"ssss");
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      return this.http.post(this.url+'removeBullet', {id: bulletID}, { headers: headers}).map(res=>res.json());
   }
 
   addBullet(newBullet){

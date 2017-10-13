@@ -12,11 +12,11 @@ export class BulletsService {
    }
 
   getBullets() {
-    return [
-       new Bullet('first','1/1/2000','2/2/2222','green',[new BulletContent('1/2/2007','sdsdsds'),new BulletContent('1/1/2017','dddddd')]),
-       //new Bullet(1,'second','2/2/1111','3/2/2222','red',[new BulletContent('','')]),
-    ];
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.url+'getAllBullets', {}, { headers: headers}).map(res=>res.json());
   }
+
 
   saveBullet(bulletId,newContent){
       console.log('TODO save new content of module on DB');
@@ -27,7 +27,6 @@ export class BulletsService {
   }
 
   addBullet(newBullet){
-    console.log('TODO add bullet to DB');
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this.http.post(this.url+'addBullet', {

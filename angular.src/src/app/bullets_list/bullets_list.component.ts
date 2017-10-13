@@ -14,12 +14,16 @@ export class BulletsListComponent implements OnInit {
   private timeAndDateService:TimeAndDateService;
 
   constructor(service: BulletsService,timeAndDateService:TimeAndDateService) { 
-    this.bullets=service.getBullets();
     this.bulletsService=service;
     this.timeAndDateService=timeAndDateService;
   }
 
   ngOnInit() {
+    this.bullets=this.bulletsService.getBullets().subscribe(res=>{
+      res.bullets.forEach(element => {
+        this.bullets=res.bullets;
+      });
+    });
   }
 
   addBullet()
@@ -31,9 +35,8 @@ export class BulletsListComponent implements OnInit {
       this.bulletsService.addBullet(newBullet).subscribe(res=>{//push the bullet to the server
         console.log(res.msg);//print the response
         if(res.succsess){
-          newBullet.id=res.id;
+          newBullet.id=res.id; //get the id from the server
           this.bullets.push(newBullet);
-          console.log(newBullet);
         }
       });
     });

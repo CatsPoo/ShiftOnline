@@ -22,6 +22,17 @@ router.post('/addBullet', function(req, res, next) {
   });
 
 });
+router.post('/getAllBullets', function(req, res, next) {
+  bullet.getAllBullets((err,bullets)=>{
+    if(err){
+      res.json({succsess: false, msg:'Failed to get bullets'+err});
+    }
+    else{
+      res.json({succsess: true, bullets:bullets});
+    }
+  });
+
+});
 
 router.post('/getTime',function(req,res,next){
   let date=new Date();

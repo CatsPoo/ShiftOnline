@@ -29,9 +29,8 @@ module.exports.getBulletById=function(id,callback){
     Bullet.findById(id,callback);
 }
 
-module.exports.getBulletByName=function(name,callback){
-    let query={name: name};
-    Bullet.findOne(query,callback);
+module.exports.getAllBullets=function(callback){
+    this.find(callback);
 }
 
 module.exports.addBullet=function(newBullet,callback){

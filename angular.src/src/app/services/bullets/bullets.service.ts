@@ -1,9 +1,14 @@
+import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
 
 @Injectable()
 export class BulletsService {
+  private http:Http;
+  private url:String='http://localhost:3000/bullets/';
 
-  constructor() { }
+  constructor(http:Http) {
+    this.http=http;
+   }
 
   getBullets() {
     return [

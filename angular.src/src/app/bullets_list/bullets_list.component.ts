@@ -24,9 +24,12 @@ export class BulletsListComponent implements OnInit {
 
   addBullet()
   {
-    let newBullet:Bullet=new Bullet(this.bullets.length,'New bullet',this.timeAndDateService.getCurrentTime(),'6/6/6666','green',[new BulletContent('','')]);
-    this.bullets.push(newBullet);
-    this.bulletsService.addBullet(newBullet);
+    this.timeAndDateService.getCurrentTime().subscribe(res=>{
+      let date:string=res.day+'/'+res.mounth+'/'+res.year;
+      let newBullet:Bullet=new Bullet(this.bullets.length,'New bullet',date,'6/6/6666','green',[new BulletContent('','')]);
+      this.bullets.push(newBullet);
+      this.bulletsService.addBullet(newBullet);
+    });
   
   }
 

@@ -6,7 +6,7 @@ var bulletSchema=mongoose.Schema({
         type: String,
         required: true
     },
-    dateOfCreate:{
+    dateOfCreation:{
         type: String,
         required: true
     },
@@ -34,10 +34,11 @@ module.exports.getAllBullets=function(callback){
 }
 
 module.exports.addBullet=function(newBullet,callback){
+    console.log(newBullet.dateOfCreation);
     newBullet.save(callback);
 }
 
-module.exports.addContentToBullet=function(bulletID,newContent,callback){
+module.exports.addContentToBullet=function(bulletID,newContent,callback){;
     Bullet.findById(id,(err,bullet)=>{
     });
 }

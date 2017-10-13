@@ -25,3 +25,11 @@
 .bullet_item{
     height: 100%;
 }
+
+.labels_on_right{
+    float: right;
+}
+
+.labels_on_left{
+    float: left;
+}

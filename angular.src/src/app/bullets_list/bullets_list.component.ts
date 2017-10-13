@@ -16,14 +16,15 @@ export class BulletsListComponent implements OnInit {
   constructor(service: BulletsService, timeAndDateService: TimeAndDateService) {
     this.bulletsService = service;
     this.timeAndDateService = timeAndDateService;
-  }
 
-  ngOnInit() {
     this.bullets = this.bulletsService.getBullets().subscribe(res => {
       res.bullets.forEach(element => {
         this.bullets = res.bullets;
       });
     });
+  }
+
+  ngOnInit() {
   }
 
   addBullet() {

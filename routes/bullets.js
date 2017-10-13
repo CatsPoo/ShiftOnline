@@ -6,7 +6,7 @@ var bullet= require('../models/Bullets.js');
 router.post('/addBullet', function(req, res, next) {
   var newBullet=new bullet({
     name: req.body.name,
-    dateOfCreate: req.body.dateOfCreate,
+    dateOfCreation: req.body.dateOfCreation,
     lastUpdate: req.body.lastUpdate,
     color: req.body.color,
     content: req.body.content

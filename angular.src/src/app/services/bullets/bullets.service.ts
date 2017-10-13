@@ -23,7 +23,6 @@ export class BulletsService {
   }
 
   removeBullet(bulletID){
-      console.log(bulletID+"ssss");
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
       return this.http.post(this.url+'removeBullet', {id: bulletID}, { headers: headers}).map(res=>res.json());
@@ -34,7 +33,7 @@ export class BulletsService {
     headers.append('Content-Type', 'application/json');
     return this.http.post(this.url+'addBullet', {
       "name": newBullet.name,
-      "dateOfCreate": "\""+newBullet.dateOfCreate+"\"",
+      "dateOfCreation": newBullet.dateOfCreation,
       "lastUpdate": newBullet.lastUpdate,
       "color": newBullet.color,
       "content": newBullet.content}

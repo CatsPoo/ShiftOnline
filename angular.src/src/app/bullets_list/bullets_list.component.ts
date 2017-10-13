@@ -24,11 +24,18 @@ export class BulletsListComponent implements OnInit {
 
   addBullet()
   {
-    this.timeAndDateService.getCurrentTime().subscribe(res=>{
-      let date:string=res.day+'/'+res.mounth+'/'+res.year;
-      let newBullet:Bullet=new Bullet(this.bullets.length,'New bullet',date,'6/6/6666','green',[new BulletContent('','')]);
-      this.bullets.push(newBullet);
-      this.bulletsService.addBullet(newBullet);
+    this.timeAndDateService.getCurrentTime().subscribe(res=>{ //get current time from server
+
+      let date:string=res.day+'/'+res.mounth+'/'+res.year;//create new date sring from the response values
+      let newBullet:Bullet=new Bullet('New bullet',date,date,'green',[new BulletContent(date,'')]);//create new bullet with the new data
+      this.bulletsService.addBullet(newBullet).subscribe(res=>{//push the bullet to the server
+        console.log(res.msg);//print the response
+        if(res.succsess){
+          newBullet.id=res.id;
+          this.bullets.push(newBullet);
+          console.log(newBullet);
+        }
+      });
     });
   
   }

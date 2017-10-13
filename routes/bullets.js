@@ -14,10 +14,10 @@ router.post('/addBullet', function(req, res, next) {
 
   bullet.addBullet(newBullet,(err,bullet)=>{
     if(err){
-      res.json({succsess: false, msg:'Failed to add bullet  '+err});
+      res.json({succsess: false, msg:'Failed to add bullet  <br>'+err});
     }
     else{
-      res.json({succsess: true, msg:'Bullet added'});
+      res.json({succsess: true, msg:'Bullet added',id:bullet.id});
     }
   });
 

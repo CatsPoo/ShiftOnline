@@ -1,5 +1,6 @@
-import { Http } from '@angular/http';
+import { Http, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class BulletsService {
@@ -12,7 +13,7 @@ export class BulletsService {
 
   getBullets() {
     return [
-       new Bullet(0,'first','1/1/2000','2/2/2222','green',[new BulletContent('1/2/2007','sdsdsds'),new BulletContent('1/1/2017','dddddd')]),
+       new Bullet('first','1/1/2000','2/2/2222','green',[new BulletContent('1/2/2007','sdsdsds'),new BulletContent('1/1/2017','dddddd')]),
        //new Bullet(1,'second','2/2/1111','3/2/2222','red',[new BulletContent('','')]),
     ];
   }
@@ -24,15 +25,25 @@ export class BulletsService {
   removeBullet(bulletID){
       console.log('TOTO remove bullet frm DB');
   }
+
   addBullet(newBullet){
-    console.log('TODO add bullet to DB')
-    console.log(newBullet);
+    console.log('TODO add bullet to DB');
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.url+'addBullet', {
+      "name": newBullet.name,
+      "dateOfCreate": "\""+newBullet.dateOfCreate+"\"",
+      "lastUpdate": newBullet.lastUpdate,
+      "color": newBullet.color,
+      "content": newBullet.content}
+       , { headers: headers}).map(res=>res.json());
   }
 
 }
 
 export class Bullet{
-  constructor(private _id:number,
+  private _id:string;
+  constructor(
     private _name:string,
     private _dateOfCreation:string,
     private _lastUpdate:string,
@@ -48,6 +59,7 @@ export class Bullet{
 
     set color(value:string){this._color=value};
     set name(value:string){this._name=value};
+    set id(value:string){this._id=value};
 
 }
 

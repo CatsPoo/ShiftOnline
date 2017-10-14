@@ -66,8 +66,8 @@ export class Bullet{
 }
 
 export class BulletContent{
-  constructor(private _updateTime:Date,private _content:string){}
+  constructor(public _updateTime:Date,private _content:string){}
 
-  get updateTime() {return this._updateTime;}
+  get updateTime(){ return this._updateTime;}
   get content(){return this._content};
 }

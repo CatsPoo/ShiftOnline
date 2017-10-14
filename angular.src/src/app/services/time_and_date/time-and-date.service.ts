@@ -29,14 +29,14 @@ export class Date{
   get day(){return this._day};
 
   compare(anotherDate:Date): number{
-    if(this.year>anotherDate.year) return 1;
-    else if(this.year<anotherDate.year) return -1;
+    if(this._year>anotherDate._year) return 1;
+    else if(this._year<anotherDate._year) return -1;
     else{
-      if(this.mounth>anotherDate.mounth) return 1;
-      else if(this.mounth<anotherDate.mounth) return -1;
+      if(this._mounth>anotherDate._mounth) return 1;
+      else if(this._mounth<anotherDate._mounth) return -1;
       else{
-        if(this.day>anotherDate.day) return 1;
-        else if(this.day<anotherDate.day) return -1;
+        if(this._day>anotherDate._day) return 1;
+        else if(this._day<anotherDate._day) return -1;
         else return 0;
       }
     }

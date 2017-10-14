@@ -6,7 +6,7 @@
 <ul>
     <li *ngFor="let bullet of this.bullets">
         <div class=bullet_item>
-            <app-bullet (removeBulletClick)="handleRemoveClick($event)" [bulletData]="bullet"></app-bullet>
+            <app-bullet (removeBulletClick)="handleRemoveClick($event)" [bulletData]="bullet" [today]="this.today"></app-bullet>
         </div>
     </li>
 </ul>

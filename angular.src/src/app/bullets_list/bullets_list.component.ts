@@ -1,5 +1,5 @@
 import { TimeAndDateService,Date } from './../services/time_and_date/time-and-date.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BulletsService, Bullet, BulletContent } from './../services/bullets/bullets.service';
 
 @Component({
@@ -38,7 +38,7 @@ export class BulletsListComponent implements OnInit {
 
   addBullet() {
 
-    let newBullet: Bullet = new Bullet('New bullet', this.today.toString(), this.today.toString(), 'green', [new BulletContent(this.today.toString(), '')]);//create new bullet with the new data
+    let newBullet: Bullet = new Bullet('New bullet', this.today.toString(), this.today.toString(), 'green', [new BulletContent(this.today, '')]);//create new bullet with the new data
     this.bulletsService.addBullet(newBullet).subscribe(res => {//push the bullet to the server
       console.log(res.msg);//print the response
       if (res.succsess) {
@@ -49,22 +49,26 @@ export class BulletsListComponent implements OnInit {
 
   }
 
-  removeBullet(node) {
-    this.bulletsService.removeBullet(node._id).subscribe(res => {
-      console.log(res.msg);
-      if (res.succsess) {
-        //remove seccess from the db
-        let index = this.bullets.indexOf(node);
-        this.bullets.splice(index, 1);
-        this.bulletsService.removeBullet(node);
-      }
-    });
-
-
+  handleRemoveClick(bullet){
+   console.log(bullet);
+    let index = this.bullets.indexOf(bullet); //remove bullet from the ui
+    this.bullets.splice(index, 1);
   }
+
   saveBullet(bullet) {
+    var newContent:BulletContent = new BulletContent(this.today,'');
+    var lastContant:BulletContent =bullet.content[bullet.content.length-1];
+
+    if(newContent.updateTime.compare(lastContant.updateTime)==1)//the new contant's upsate time is newer then the last update (pass at list one day since the last update)
+    {
+      //push new content to the object
+    }
+    else//the contant updated at the same time as the last update
+    {
+      //change the last update without create new one
+    }
+
     this.bulletsService.saveBullet(bullet.id, 'TODO save content');
-    var content = new BulletContent(this.today.toString(),'');
 
   }
   saveAllBullets() {

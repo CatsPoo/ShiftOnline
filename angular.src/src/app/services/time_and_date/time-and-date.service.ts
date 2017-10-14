@@ -43,6 +43,6 @@ export class Date{
   }
 
   toString():string{
-    return this._year+'/'+this._mounth+'/'+this._day;
+    return this._day+'/'+this._mounth+'/'+this._year;
   }
 }

@@ -62,4 +62,16 @@ margin-top: 3%;
 
 textarea{
     resize: vertical;
+    float: left;
+}
+
+.bullet_settings{
+    margin-top: 4.5%;
+    float: left;
+    width: 7%;
+    height: 100%;
+}
+
+.save_bullet_btn, .edit_bullet_btn, .remove_bullet_btn{
+    width: 90%;
 }

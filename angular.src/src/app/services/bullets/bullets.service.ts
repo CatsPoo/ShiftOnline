@@ -1,3 +1,4 @@
+import { Date } from './../time_and_date/time-and-date.service';
 import { Http, Headers } from '@angular/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
@@ -65,7 +66,7 @@ export class Bullet{
 }
 
 export class BulletContent{
-  constructor(private _updateTime:string,private _content:string){}
+  constructor(private _updateTime:Date,private _content:string){}
 
   get updateTime() {return this._updateTime;}
   get content(){return this._content};

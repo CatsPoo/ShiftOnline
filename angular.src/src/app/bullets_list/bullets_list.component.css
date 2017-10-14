@@ -11,17 +11,6 @@
     margin-left: 1%;
 }
 
-.bullet_settings{
-    margin-top: 4%;
-    float: left;
-    width: 7%;
-    height: 100%;
-}
-
-.save_bullet_btn, .edit_bullet_btn, .remove_bullet_btn{
-    width: 90%;
-}
-
 .bullet_item{
     height: 100%;
 }
@@ -32,4 +21,12 @@
 
 .labels_on_left{
     float: left;
+}
+
+li{
+    padding-bottom: 10%;
+}
+
+ul{
+    padding-bottom: 30%;
 }

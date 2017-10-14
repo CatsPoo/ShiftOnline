@@ -34,7 +34,6 @@ module.exports.getAllBullets=function(callback){
 }
 
 module.exports.addBullet=function(newBullet,callback){
-    console.log(newBullet.dateOfCreation);
     newBullet.save(callback);
 }
 

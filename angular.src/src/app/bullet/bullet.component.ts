@@ -1,6 +1,6 @@
 import { BulletsListComponent } from './../bullets_list/bullets_list.component';
-import { Bullet } from './../services/bullets/bullets.service';
-import { Component, OnInit, Input} from '@angular/core';
+import { Bullet, BulletsService } from './../services/bullets/bullets.service';
+import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-bullet',
@@ -10,8 +10,13 @@ import { Component, OnInit, Input} from '@angular/core';
 export class BulletComponent implements OnInit {
   
   @Input('bulletData') bullet:Bullet;
+  @Output('removeBulletClick') removeBulletClick=new EventEmitter();
+  
   private currentContent;
-  constructor() {
+  private bulletsService: BulletsService;
+
+  constructor(bulletsService:BulletsService) {
+    this.bulletsService=bulletsService;
    }
 
   ngOnInit() {
@@ -24,6 +29,16 @@ export class BulletComponent implements OnInit {
 
   olderContent(){
     if(this.currentContent>0) this.currentContent--;
+  }
+
+  removeBullet(bellet) {
+    this.bulletsService.removeBullet(bellet._id).subscribe(res => {
+      console.log(res.msg);
+      if (res.succsess) {
+        //remove seccess from the db
+        this.removeBulletClick.emit(this.bullet);
+      }
+    });
   }
 
 }

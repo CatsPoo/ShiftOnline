@@ -17,6 +17,7 @@ export class BulletComponent implements OnInit {
   private currentContent = 0;
   
   private bulletsService: BulletsService;
+  private bulletContentValue:string;
 
   constructor(bulletsService: BulletsService) {
     this.bulletsService = bulletsService;
@@ -24,8 +25,6 @@ export class BulletComponent implements OnInit {
 
   ngOnInit() {
     this.currentContent = this.bullet.content.length - 1;
-
-    console.log(this.bullet.content);
   }
 
   newerContent() {
@@ -47,12 +46,13 @@ export class BulletComponent implements OnInit {
   }
 
   saveBullet(bullet) {
-    var newContent: BulletContent = new BulletContent(this.today, '');
+    var newContent: BulletContent = new BulletContent(this.today, this.bulletContentValue);
     var lastContant: BulletContent = bullet.content[bullet.content.length - 1];
     
-    if (newContent.updateTime.compare(lastContant._updateTime) == 1)//the new contant's upsate time is newer then the last update (pass at list one day since the last update)
+    if (true)//newContent.updateTime.compare(lastContant._updateTime) == 1)//the new contant's upsate time is newer then the last update (pass at list one day since the last update)
     {
       //push new content to the object
+      this.bulletsService.addNewContentToBullet(bullet.id,newContent);
     }
     else//the contant updated at the same time as the last update
     {

@@ -46,6 +46,13 @@ router.post('/removeBullet',function(req,res,next){
   });
 });
 
+router.post('/addNewContentToBullet',function(req,res,next){
+  console.log(req.body);
+  res.json({hi:"hi"});
+
+});
+
+
 router.post('/getTime',function(req,res,next){
   let date=new Date();
   res.json({

@@ -47,8 +47,11 @@ router.post('/removeBullet',function(req,res,next){
 });
 
 router.post('/addNewContentToBullet',function(req,res,next){
-  console.log(req.body);
-  res.json({hi:"hi"});
+
+  bullet.addNewContentToBullet(req.body.bulletID,{"_content":req.body.contentValue,"_updateTime":req.body.contentUpdateTime},(err,dbRes)=>{
+    if(err){  res.json({seccess:false,msg:'Failed to add new content to the bullet'});}
+    else   res.json({seccess:true,msg:'new content added to the bullet'});
+  });
 
 });
 

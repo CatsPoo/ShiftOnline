@@ -15,24 +15,30 @@ export class BulletComponent implements OnInit {
   @Output('removeBulletClick') removeBulletClick = new EventEmitter();
 
   private currentContent = 0;
+
+  private readOnly:boolean=true;
   
   private bulletsService: BulletsService;
   private bulletContentValue:string;
 
   constructor(bulletsService: BulletsService) {
     this.bulletsService = bulletsService;
+    
   }
 
   ngOnInit() {
     this.currentContent = this.bullet.content.length - 1;
+    this.bulletContentValue=this.bullet.content[this.currentContent]._content;
   }
 
   newerContent() {
     if (this.currentContent < this.bullet.content.length - 1) this.currentContent++;
+    this.bulletContentValue=this.bullet.content[this.currentContent]._content;
   }
 
   olderContent() {
     if (this.currentContent > 0) this.currentContent--;
+    this.bulletContentValue=this.bullet.content[this.currentContent]._content;
   }
 
   removeBullet(bellet) {
@@ -49,17 +55,17 @@ export class BulletComponent implements OnInit {
     var newContent: BulletContent = new BulletContent(this.today, this.bulletContentValue);
     var lastContant: BulletContent = bullet.content[bullet.content.length - 1];
     
-    if (true)//newContent.updateTime.compare(lastContant._updateTime) == 1)//the new contant's upsate time is newer then the last update (pass at list one day since the last update)
+    if (this.today.compare(lastContant._updateTime)==1)//newContent.updateTime.compare(lastContant._updateTime) == 1)//the new contant's upsate time is newer then the last update (pass at list one day since the last update)
     {
       //push new content to the object
-      this.bulletsService.addNewContentToBullet(bullet.id,newContent);
+      this.bulletsService.addNewContentToBullet(bullet.id,newContent).subscribe(res=>{
+        console.log(res.msg);
+      });
     }
     else//the contant updated at the same time as the last update
     {
       //change the last update without create new one
     }
-
-    this.bulletsService.saveBullet(bullet.id, 'TODO save content');
 
   }
 

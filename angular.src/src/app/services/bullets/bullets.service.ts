@@ -18,11 +18,6 @@ export class BulletsService {
     return this.http.post(this.url+'getAllBullets', {}, { headers: headers}).map(res=>res.json());
   }
 
-
-  saveBullet(bulletId,newContent){
-      console.log('TODO save new content of module on DB');
-  }
-
   removeBullet(bulletID){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
@@ -48,7 +43,7 @@ export class BulletsService {
       "bulletID":bulletID,
       "contentUpdateTime":newContent.updateTime,
       "contentValue":newContent.content
-    },{headers: headers}).map(res=>res.json);
+    },{headers: headers}).map(res=>res.json());
   }
 
 }
@@ -76,7 +71,7 @@ export class Bullet{
 }
 
 export class BulletContent{
-  constructor(public _updateTime:Date,private _content:string){}
+  constructor(public _updateTime:Date,public _content:string){}
 
   get updateTime(){ return this._updateTime;}
   get content(){return this._content};

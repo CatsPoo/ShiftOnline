@@ -49,30 +49,12 @@ export class BulletsListComponent implements OnInit {
   }
 
   handleRemoveClick(bullet){
-   console.log(bullet);
     let index = this.bullets.indexOf(bullet); //remove bullet from the ui
     this.bullets.splice(index, 1);
   }
-
-  saveBullet(bullet) {
-    var newContent:BulletContent = new BulletContent(this.today,'');
-    var lastContant:BulletContent =bullet.content[bullet.content.length-1];
-
-    if(newContent.updateTime.compare(lastContant.updateTime)==1)//the new contant's upsate time is newer then the last update (pass at list one day since the last update)
-    {
-      //push new content to the object
-    }
-    else//the contant updated at the same time as the last update
-    {
-      //change the last update without create new one
-    }
-
-    this.bulletsService.saveBullet(bullet.id, 'TODO save content');
-
-  }
   saveAllBullets() {
     this.bullets.forEach(element => {
-      this.saveBullet(element);
+   //   this.saveBullet(element);
     });
   }
 

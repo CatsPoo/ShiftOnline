@@ -22,7 +22,6 @@ export class BulletsListComponent implements OnInit {
       res.bullets.forEach(element => {
         let tempBullet = new Bullet(element.name, element.dateOfCreation, element.lastUpdate, element.color, element.content);
         tempBullet.id = element._id;
-        console.log(tempBullet + 'temp');
         this.bullets.push(tempBullet);
       });
     });

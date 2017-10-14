@@ -7,7 +7,7 @@
                                 </div>
                                 <div class="current_contect_update_time">
                                         <button class="btn right_arrow" (click)="newerContent()"> R </button>
-                                        <span class="current_contect_update_time_tag">{{bullet.content[currentContent].updateTime}}</span>
+                                        <span class="current_contect_update_time_tag">{{bullet.content[currentContent]._updateTime._day}}/{{bullet.content[currentContent]._updateTime._mounth}}/{{bullet.content[currentContent]._updateTime._year}}</span>
                                         <button class="btn left_arrow" (click)="olderContent()"> L </button>
                                 </div>
                         </div>

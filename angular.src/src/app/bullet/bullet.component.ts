@@ -1,5 +1,5 @@
 import { BulletsListComponent } from './../bullets_list/bullets_list.component';
-import { Bullet, BulletsService } from './../services/bullets/bullets.service';
+import { Bullet, BulletsService, BulletContent } from './../services/bullets/bullets.service';
 import { Component, OnInit, Input,Output,EventEmitter} from '@angular/core';
 
 @Component({
@@ -11,8 +11,8 @@ export class BulletComponent implements OnInit {
   
   @Input('bulletData') bullet:Bullet;
   @Output('removeBulletClick') removeBulletClick=new EventEmitter();
-  
-  private currentContent;
+
+  private currentContent=0;
   private bulletsService: BulletsService;
 
   constructor(bulletsService:BulletsService) {
@@ -21,6 +21,8 @@ export class BulletComponent implements OnInit {
 
   ngOnInit() {
     this.currentContent= this.bullet.content.length-1;
+
+    console.log(this.bullet.content);
   }
 
   newerContent(){

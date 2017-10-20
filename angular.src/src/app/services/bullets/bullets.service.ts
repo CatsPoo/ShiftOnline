@@ -46,6 +46,16 @@ export class BulletsService {
     },{headers: headers}).map(res=>res.json());
   }
 
+  updateTodayContentOfBullet(bulletID:string,newContent:BulletContent){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.url+'updateTodayContentOfBullet',{
+      "bulletID":bulletID,
+      "contentUpdateTime":newContent.updateTime,
+      "contentValue":newContent.content
+    },{headers: headers}).map(res=>res.json());
+  }
+
 }
 
 export class Bullet{

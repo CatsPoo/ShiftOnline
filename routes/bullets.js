@@ -55,6 +55,15 @@ router.post('/addNewContentToBullet',function(req,res,next){
 
 });
 
+router.post('/updateTodayContentOfBullet',function(req,res,next){
+  
+    bullet.updateTodayContentOfBullet(req.body.bulletID,{"_content":req.body.contentValue,"_updateTime":req.body.contentUpdateTime},(err,dbRes)=>{
+      if(err){  res.json({seccess:false,msg:'Failed to add new content to the bullet'});}
+      else   res.json({seccess:true,msg:'new content added to the bullet'});
+    });
+  
+  });
+
 
 router.post('/getTime',function(req,res,next){
   let date=new Date();

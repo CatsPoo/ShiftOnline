@@ -37,11 +37,6 @@ module.exports.addBullet=function(newBullet,callback){
     newBullet.save(callback);
 }
 
-module.exports.addContentToBullet=function(bulletID,newContent,callback){;
-    Bullet.findById(id,(err,bullet)=>{
-    });
-}
-
 module.exports.removeBullet=function(bulletID,callback){
     console.log(bulletID);
     this.findById(bulletID).remove(callback);
@@ -49,4 +44,10 @@ module.exports.removeBullet=function(bulletID,callback){
 
 module.exports.addNewContentToBullet=function(bulletID,content,callback){
     this.findById(bulletID).update({_id:bulletID} ,{$push: {"content":content}},callback);
+}
+
+module.exports.updateTodayContentOfBullet=function(bulletID,content,callback){
+    console.log(content);
+   this.findById(bulletID).update({_id:bulletID} ,{$pop: {"content":1}},(err,res)=>{});
+   this.findById(bulletID).update({_id:bulletID} ,{$push: {"content":content}},callback);
 }

@@ -14,9 +14,8 @@ import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 const appRoute:Routes=[
-  {path:'',component: HomeComponent},
+  {path:'',component: ManpowerStrengthComponent},
   {path:'bullets-list',component: BulletsListComponent},
-  {path:'manpower-strength',component: ManpowerStrengthComponent},
 ];
 
 @NgModule({

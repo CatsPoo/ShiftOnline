@@ -16,6 +16,13 @@ app.listen(port,function(){
   console.log("Start server on port: "+port);
 });
 
+app.use(function(req,res,next){
+  res.header('Access-Control-Allow-Origin',"*");
+  res.header('Access-Control-Allow-Methods','GET,PUT,POST,DELETE,OPTIONS');
+  res.header('Access-Control-Allow-Headers','Content-Type');
+  next();
+});
+
 mongoose.connect(config.database);
 
 mongoose.connection.on('connected',()=>{

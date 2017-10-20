@@ -9,7 +9,6 @@ import { BulletsListComponent } from './bullets_list/bullets_list.component';
 import { BulletComponent } from './bullet/bullet.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ManpowerStrengthComponent } from './manpower-strength/manpower-strength.component';
-import { HomeComponent } from './home/home.component';
 import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
@@ -25,7 +24,6 @@ const appRoute:Routes=[
     BulletComponent,
     NavBarComponent,
     ManpowerStrengthComponent,
-    HomeComponent
     
   ],
   imports: [

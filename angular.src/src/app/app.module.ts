@@ -11,10 +11,12 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ManpowerStrengthComponent } from './manpower-strength/manpower-strength.component';
 import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
+import { HanhayotComponent } from './hanhayot/hanhayot.component';
 
 const appRoute:Routes=[
   {path:'',component: ManpowerStrengthComponent},
-  {path:'bullets-list',component: BulletsListComponent},
+  {path:'events-list',component: BulletsListComponent},
+  {path:'hanhayot',component: HanhayotComponent}
 ];
 
 @NgModule({
@@ -24,6 +26,7 @@ const appRoute:Routes=[
     BulletComponent,
     NavBarComponent,
     ManpowerStrengthComponent,
+    HanhayotComponent,
     
   ],
   imports: [

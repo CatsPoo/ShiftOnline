@@ -59,14 +59,14 @@ export class BulletComponent implements OnInit {
     {
       //push new content to the object
       this.bulletsService.addNewContentToBullet(bullet.id,newContent).subscribe(res=>{
-        console.log(res.msg);
+        this.bullet.content.push(newContent);
       });
     }
     else//the contant updated at the same time as the last update
     {
       //change the last update without create new one
       this.bulletsService.updateTodayContentOfBullet(bullet.id,newContent).subscribe(res=>{
-        console.log(res.msg);
+        this.bullet.content[this.bullet.content.length-1]=newContent;
       });
     }
 

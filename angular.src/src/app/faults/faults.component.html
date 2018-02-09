@@ -1,3 +1,16 @@
-<p>
-  faults works!
-</p>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First name</th>
+      <th>Last name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.id }}</td>
+      <td>{{ person.first }}</td>
+      <td>{{ person.last }}</td>
+    </tr>
+  </tbody>
+  </table>

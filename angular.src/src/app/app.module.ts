@@ -13,6 +13,8 @@ import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { HanhayotComponent } from './hanhayot/hanhayot.component';
 import { FaultsComponent } from './faults/faults.component';
+import { DataTablesModule } from 'angular-datatables';
+
 
 const appRoute:Routes=[
   {path:'',component: ManpowerStrengthComponent},
@@ -36,7 +38,8 @@ const appRoute:Routes=[
     BrowserModule,
     RouterModule.forRoot(appRoute),
     HttpModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule
   ],
   providers: [
     BulletsService,

@@ -1,0 +1,10 @@
+.direction_right{
+    direction: rtl
+}
+.float_right{
+    float: right;
+}
+
+.buttons_bar{
+    padding-bottom: 2%;
+}

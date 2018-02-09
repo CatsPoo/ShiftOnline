@@ -1,16 +1,32 @@
-<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover">
-  <thead>
+<div class="buttons_bar">
+    <button class="btn btn-danger add_bullet_btn" (click)="aa()">הוספת תקלה</button>
+</div>
+<table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover ">
+  <thead class="">
     <tr>
-      <th>ID</th>
-      <th>First name</th>
-      <th>Last name</th>
+      <th>#</th>
+      <th>בסיס</th>
+      <th>אתר/טייסת</th>
+      <th>שרדות/השבתה</th>
+      <th>שעת התחלה</th>
+      <th>שעת סיום</th>
+      <th>איש קשר בבסיס</th>
+      <th>הערות</th> 
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let person of persons">
-      <td>{{ person.id }}</td>
-      <td>{{ person.first }}</td>
-      <td>{{ person.last }}</td>
+    <tr *ngFor="let fault of _faulstList">
+      <td>{{ fault.id }}</td>
+      <td>{{ fault.base }}</td>
+      <td>{{ fault.site }}</td>
+      <td>
+        <div *ngIf="!fault.state; else disables">ירידה בשרידות</div>
+        <ng-template #disables>השבתה</ng-template>
+      </td> 
+      <td>{{ fault.startTime }}</td>
+      <td>{{ fault.endTime }}</td>
+      <td>{{ fault.contact }}</td>
+      <td>{{ fault.remarks }}</td> 
     </tr>
   </tbody>
   </table>

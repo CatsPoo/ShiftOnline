@@ -12,11 +12,13 @@ import { ManpowerStrengthComponent } from './manpower-strength/manpower-strength
 import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 import { HanhayotComponent } from './hanhayot/hanhayot.component';
+import { FaultsComponent } from './faults/faults.component';
 
 const appRoute:Routes=[
   {path:'',component: ManpowerStrengthComponent},
   {path:'events-list',component: BulletsListComponent},
-  {path:'hanhayot',component: HanhayotComponent}
+  {path:'hanhayot',component: HanhayotComponent},
+  {path:'faults',component: FaultsComponent}
 ];
 
 @NgModule({
@@ -27,6 +29,7 @@ const appRoute:Routes=[
     NavBarComponent,
     ManpowerStrengthComponent,
     HanhayotComponent,
+    FaultsComponent,
     
   ],
   imports: [

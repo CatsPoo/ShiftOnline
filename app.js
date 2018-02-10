@@ -35,6 +35,14 @@ mongoose.connection.on('error',()=>{
   console.log('Failed to connect  MongoDB');
 });
 
+function mainPage(req, res) {
+  res.redirect('/');
+}
+
+
+app.get('/events-list', mainPage); 
+app.get('/hanhayot', mainPage);
+app.get('/faults', mainPage); 
 
 
 // uncomment after placing your favicon in /public

@@ -9,7 +9,9 @@ var config=require('./config/database');
 var router=express.Router();
 
 var bullets = require('./routes/bullets');
+//const api = require('./');
 var app = express();
+
 
 var port=3000;
 app.listen(port,function(){
@@ -44,6 +46,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/bullets', bullets);
+//app.use('/api', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

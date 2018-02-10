@@ -15,7 +15,7 @@ export class TimeAndDateService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
-    return this.http.post(this.url + '/bullets/getTime', {}, { headers: headers })
+    return this.http.post(this.url + '/api/bullets/getTime', {}, { headers: headers })
       .map(res => res.json());
 
   }

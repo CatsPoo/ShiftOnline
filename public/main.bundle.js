@@ -665,7 +665,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var BulletsService = /** @class */ (function () {
     function BulletsService(http) {
-        this.url = 'http://localhost:3000/bullets/';
+        this.url = 'http://localhost:3000/api/bullets/';
         this.http = http;
     }
     BulletsService.prototype.getBullets = function () {
@@ -937,7 +937,7 @@ var TimeAndDateService = /** @class */ (function () {
     TimeAndDateService.prototype.getCurrentTime = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]();
         headers.append('Content-Type', 'application/json');
-        return this.http.post(this.url + '/bullets/getTime', {}, { headers: headers })
+        return this.http.post(this.url + '/api/bullets/getTime', {}, { headers: headers })
             .map(function (res) { return res.json(); });
     };
     TimeAndDateService = __decorate([

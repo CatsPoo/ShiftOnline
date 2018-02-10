@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BulletsService {
   private http:Http;
-  private url:String='http://localhost:3000/bullets/';
+  private url:String='http://localhost:3000/api/bullets/';
 
   constructor(http:Http) {
     this.http=http;

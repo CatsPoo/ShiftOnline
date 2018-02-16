@@ -65,7 +65,8 @@ export class Bullet{
     private _dateOfCreation:string,
     private _lastUpdate:string,
     private _color:string,
-    private _content:Array<BulletContent>){}
+    private _content:Array<BulletContent>){
+    }
 
     get id(){return this._id;}
     get name(){return this._name;}

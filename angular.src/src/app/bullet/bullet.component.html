@@ -6,21 +6,21 @@
                                         <span class="bullet_name_tag">{{bullet.name}}</span>
                                 </div>
                                 <div class="current_contect_update_time">
-                                        <button class="btn right_arrow" (click)="newerContent()"> R </button>
+                                        <button class="btn right_arrow" (click)="newerContent()"> > </button>
                                         <span class="current_contect_update_time_tag">{{bullet.content[currentContent]._updateTime._day}}/{{bullet.content[currentContent]._updateTime._mounth}}/{{bullet.content[currentContent]._updateTime._year}}</span>
-                                        <button class="btn left_arrow" (click)="olderContent()"> L </button>
+                                        <button class="btn left_arrow" (click)="olderContent()"> < </button>
                                 </div>
                         </div>
 
                         <div class="labels_on_right">
-                                <div class="last_update">
-                                        <label class="last_update_tag">Last update:</label>
-                                        <span class="last_update_value" id="last_update_{{bullet.id}}">{{bullet.lastUpdate}}</span>
-                                </div>
                                 <div class="creation_time">
-                                        <label class="creation_time_tag">Created at:</label>
+                                        <label class="creation_time_tag">נוצר בתאריך: </label>
                                         <span class="creation_time__value" id="creation_time_{{bullet.id}}">{{bullet.dateOfCreation}}</span>
                                 </div>
+                                <div class="last_update">
+                                                <label class="last_update_tag">עדכון אחרון: </label>
+                                                <span class="last_update_value" NgModa id="last_update_{{bullet.id}}">{{bullet.lastUpdate}}</span>
+                                        </div>
                         </div>
 
                 </div>
@@ -28,21 +28,12 @@
         </div>
         <div class="bullet_settings">
                         <button class="btn btn-sm btn-primary save_bullet_btn" id="save_bullet_{{bullet.id}}" (click)="saveBullet(bullet)">
-                                <span>Save</span>
+                                <span>שמירה</span>
                         </button>
                         <br>
                         <button class="btn btn-sm btn-danger remove_bullet_btn" id="remove_bullet_{{bullet.id}}" (click)="removeBullet(bullet)">
-                                <span>Remove</span>
+                                <span>מחיקה</span>
                         </button>
-                        <br>
-                        <a href="#" class="btn btn-default">Default</a>
-                        <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                        </ul>
+                        
                 </div>
 </div>

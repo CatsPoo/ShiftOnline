@@ -1,0 +1,72 @@
+.body{
+    margin-top: 3%;
+    text-align: left;
+    height: 100%;
+}
+
+
+.textarea_field{
+    width: 90%;
+    float: left;
+    height: 100%;
+}
+
+.labels{
+    font-size: 20px;
+}
+
+.labels_on_right{
+    direction: rtl;
+    widows: 95%;
+}
+.labels_on_left{
+    width: 5%;
+    direction: rtl;
+    float: left;
+}
+
+.name{
+    direction: rtl;
+    padding-left: 15%;
+}
+.start_date, .end_date{
+    float: right;
+}
+.end_date{
+    margin-right: 3%;
+}
+
+textarea{
+    width: 100%;
+}
+
+.right_side_of_textarea, .left_side_of_textarea{
+height: 100%;
+
+margin-top: 3%;
+}
+
+.left_side_of_textarea{
+    float: left;
+}
+.right_side_of_textarea{
+    float: left;
+}
+
+
+
+textarea{
+    resize: vertical;
+    float: left;
+}
+
+.hanhaya_settings{
+    margin-top: 4.5%;
+    float: left;
+    width: 7%;
+    height: 100%;
+}
+
+.save_hanhaya_btn, .edit_hanhaya_btn, .remove_hanhaya_btn{
+    width: 90%;
+}

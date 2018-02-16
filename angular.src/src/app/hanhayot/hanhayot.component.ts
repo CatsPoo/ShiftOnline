@@ -1,5 +1,6 @@
+import { HanhayotService, Hanhaya } from './../services/hanhayot/hanhayot.service';
+import { TimeAndDateService } from './../services/time_and_date/time-and-date.service';
 import { Component, OnInit } from '@angular/core';
-import { BulletsService, Bullet, BulletContent } from './../services/bullets/bullets.service';
 
 @Component({
   selector: 'app-hanhayot',
@@ -8,9 +9,23 @@ import { BulletsService, Bullet, BulletContent } from './../services/bullets/bul
 })
 export class HanhayotComponent implements OnInit {
 
-  constructor() { }
+  private hanhayot = [];
+  private hanhayotService: HanhayotService
+  private timeAndDateService: TimeAndDateService;
+  private today: Date;
+
+  constructor(service: HanhayotService, timeAndDateService: TimeAndDateService) {
+    this.hanhayotService = service;
+    this.timeAndDateService = timeAndDateService;
+
+    this.hanhayot=this.hanhayotService.getHanhayot();
+  }
+
 
   ngOnInit() {
+  }
+
+  addNew(){
   }
 
 }

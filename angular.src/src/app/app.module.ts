@@ -1,3 +1,4 @@
+import { HanhayotService } from './services/hanhayot/hanhayot.service';
 import { FaultService } from './services/fault/fault.service';
 import {TimeAndDateService } from './services/time_and_date/time-and-date.service';
 import { BulletsService } from './services/bullets/bullets.service';
@@ -19,6 +20,7 @@ import {HttpModule} from '@angular/http';
 import { FormsModule }   from '@angular/forms';
 
 import { DataTablesModule } from 'angular-datatables';
+import { HanhayaComponent } from './hanhaya/hanhaya.component';
 
 
 const appRoute:Routes=[
@@ -37,6 +39,7 @@ const appRoute:Routes=[
     ManpowerStrengthComponent,
     HanhayotComponent,
     FaultsComponent,
+    HanhayaComponent,
     
   ],
   imports: [
@@ -49,7 +52,8 @@ const appRoute:Routes=[
   providers: [
     BulletsService,
     TimeAndDateService,
-    FaultService
+    FaultService,
+    HanhayotService
   ],
   bootstrap: [AppComponent]
 })

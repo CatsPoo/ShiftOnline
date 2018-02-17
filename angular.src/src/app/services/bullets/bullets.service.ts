@@ -78,6 +78,7 @@ export class Bullet{
     set color(value:string){this._color=value};
     set name(value:string){this._name=value};
     set id(value:string){this._id=value};
+    set lastUpdate(value:string){this._lastUpdate=value;}
 
 }
 

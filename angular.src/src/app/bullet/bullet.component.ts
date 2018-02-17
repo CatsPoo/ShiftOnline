@@ -70,6 +70,8 @@ export class BulletComponent implements OnInit {
       });
     }
 
+    this.bullet.lastUpdate=newContent.updateTime.toString();
+
   }
 
 }

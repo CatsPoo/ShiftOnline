@@ -51,3 +51,8 @@ module.exports.updateTodayContentOfBullet=function(bulletID,content,callback){
    this.findById(bulletID).update({_id:bulletID} ,{$pop: {"content":1}},(err,res)=>{});
    this.findById(bulletID).update({_id:bulletID} ,{$push: {"content":content}},callback);
 }
+module.exports.updateLastUpdate=function(bulletID,lastUpdate,callback){
+    let lastUpdateString=lastUpdate._day+"/"+lastUpdate._mounth+"/"+lastUpdate._year;
+   this.findById(bulletID).update({_id:bulletID} , {"lastUpdate":lastUpdateString},(err,res)=>{});
+
+}

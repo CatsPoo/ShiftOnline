@@ -56,12 +56,16 @@ router.post('/addNewContentToBullet',function(req,res,next){
 });
 
 router.post('/updateTodayContentOfBullet',function(req,res,next){
-  
+  let error=false;
     bullet.updateTodayContentOfBullet(req.body.bulletID,{"_content":req.body.contentValue,"_updateTime":req.body.contentUpdateTime},(err,dbRes)=>{
-      if(err){  res.json({seccess:false,msg:'Failed to add new content to the bullet'});}
+      if(err) error=true;
+    });
+
+    bullet.updateLastUpdate(req.body.bulletID,req.body.contentUpdateTime,(err,dbRes)=>{
+      if(err||error){  res.json({seccess:false,msg:'Failed to add new content to the bullet'});}
       else   res.json({seccess:true,msg:'new content added to the bullet'});
     });
-  
+
   });
 
 

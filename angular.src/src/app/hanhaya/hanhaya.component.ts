@@ -18,7 +18,7 @@ export class HanhayaComponent implements OnInit {
   private readOnly:boolean=true;
   
   private bulletsService: HanhayotService;
-  private bulletContentValue:string;
+  private hanhayaContentValue:string;
 
   constructor(bulletsService: HanhayotService) {
     this.bulletsService = bulletsService;
@@ -27,7 +27,7 @@ export class HanhayaComponent implements OnInit {
 
   ngOnInit() {
     this.currentContent = this.hanhaya.content.length - 1;
-    //this.bulletContentValue=this.hanhaya.content[this.currentContent]._content;
+    this.hanhayaContentValue=this.hanhaya.content;
   }
 
   /*removeBullet(bellet) {

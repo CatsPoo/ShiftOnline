@@ -9,6 +9,7 @@ var config=require('./config/database');
 var router=express.Router();
 
 var bullets = require('./routes/bullets');
+var hanhayot= require('./routes/hanhayot');
 //const api = require('./');
 var app = express();
 
@@ -54,6 +55,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/bullets', bullets);
+app.use('/api/hanhayot', hanhayot);
 //app.use('/api', api);
 
 // catch 404 and forward to error handler

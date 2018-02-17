@@ -20,7 +20,13 @@ export class HanhayotService {
   */
 
  getHanhayot() {
-   return [new Hanhaya("test",new Date(1,1,1),new Date(2,2,2),"test")]
+   //return [new Hanhaya("test",new Date(1,1,1),new Date(2,2,2),"test"),
+   //new Hanhaya("test3",new Date(3,3,3),new Date(4,4,4),"test")]
+
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.url+'getAllHanhayot', {}, { headers: headers}).map(res=>res.json());
+  
  }
 
   removeHanhayot(bulletID){
@@ -64,7 +70,7 @@ export class HanhayotService {
 }
 
 export class Hanhaya{
-  private _id:string;
+  private _id:number;
   private _color:string;
   constructor(
     private _name:string,
@@ -79,6 +85,7 @@ export class Hanhaya{
     get content(){return this._content;}
     get color(){return this._color;}
 
+    set id(value:number){this._id=value;}
     set name(value:string){this._name=value;}
     set endDate(value:Date){this._endDate=value;}
 

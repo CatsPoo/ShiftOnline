@@ -29,10 +29,10 @@ export class HanhayotService {
   
  }
 
-  removeHanhayot(bulletID){
+  removeHanhayot(hanhayaID){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      return this.http.post(this.url+'removeBullet', {id: bulletID}, { headers: headers}).map(res=>res.json());
+      return this.http.post(this.url+'removeBullet', {id: hanhayaID}, { headers: headers}).map(res=>res.json());
   }
 
   addHanhayot(newHanhaya){
@@ -40,33 +40,12 @@ export class HanhayotService {
     headers.append('Content-Type', 'application/json');
     return this.http.post(this.url+'addBullet', {
       "name": newHanhaya.name,
-      "dateOfCreation": newHanhaya.dateOfCreation,
-      "lastUpdate": newHanhaya.lastUpdate,
-      "color": newHanhaya.color,
+      "startDate": newHanhaya.startDate,
+      "endDate": newHanhaya.endDate,
+      "color": "red",
       "content": newHanhaya.content}
        , { headers: headers}).map(res=>res.json());
   }
-/*
-  addNewContentToHanhaya(HanhayaID:string,newContent:BulletContent){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post(this.url+'addNewContentToHanhaya',{
-      "HanhayaID":HanhayaID,
-      "contentUpdateTime":newContent.updateTime,
-      "contentValue":newContent.content
-    },{headers: headers}).map(res=>res.json());
-  }
-
-  updateTodayContentOfHanhaya(HanhayaID:string,newContent:string){
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    return this.http.post(this.url+'updateTodayContentOfBullet',{
-      "HanhayaID":HanhayaID,
-      "contentUpdateTime":newContent.updateTime,
-      "contentValue":newContent.content
-    },{headers: headers}).map(res=>res.json());
-  }
-*/
 }
 
 export class Hanhaya{

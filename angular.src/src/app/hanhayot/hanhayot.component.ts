@@ -2,6 +2,7 @@ import { HanhayotService, Hanhaya } from './../services/hanhayot/hanhayot.servic
 import { TimeAndDateService, Date } from './../services/time_and_date/time-and-date.service';
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-hanhayot',
   templateUrl: './hanhayot.component.html',

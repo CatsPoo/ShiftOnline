@@ -1,6 +1,7 @@
+import { AddHanhayaModalComponent } from './../modals/add-hanhaya-modal/add-hanhaya-modal.component';
+import { OnInit, Component } from '@angular/core';
 import { HanhayotService, Hanhaya } from './../services/hanhayot/hanhayot.service';
 import { TimeAndDateService, Date } from './../services/time_and_date/time-and-date.service';
-import { Component, OnInit } from '@angular/core';
 
 
 @Component({

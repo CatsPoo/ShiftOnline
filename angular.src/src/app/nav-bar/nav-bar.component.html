@@ -1,4 +1,4 @@
-<nav class="navbar  navbar-inverse ">
+<!-- <nav class="navbar  navbar-inverse ">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
@@ -7,10 +7,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand title" href="#"><b>ShiftOnline</b></a>
+
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+        <a class="navbar-brand title" href="#"><b>ShiftOnline</b></a>
         <ul class="nav navbar-nav navbar-left">
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/']">ראשי</a></li>
             <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}"><a [routerLink]="['/events-list']">איוונטים</a></li>
@@ -22,4 +23,29 @@
       </ul>
     </div>
   </div>
+</nav>
+
+-->
+<nav class="body navbar navbar-toggleable-md  bg-faded">
+<a class="title" href="#">
+  <b>ShiftOnline</b>
+</a>
+<div class="items">
+  <ul class="">
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/faults']">תיעוד תקלות</a>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/hanhayot']">הנחיות</a>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/events-list']">איוונטים</a>
+    </li>
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+      <a [routerLink]="['/']">ראשי</a>
+    </li>
+
+  </ul>
+</div>
+
 </nav>

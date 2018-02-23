@@ -1,8 +1,32 @@
-.header{
-    padding-bottom: 1%;
-    padding-top: 1%;
-    font-size: 20px;
+.body{
+    background-color: #3b5998;
+    color: white;
 }
+
 .title{
-    font-size: 25px;
+    color: white;
+    font-size: 200%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+li:hover {
+    background-color: #8b9dc3;
+    
 }

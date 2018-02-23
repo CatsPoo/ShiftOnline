@@ -1,5 +1,6 @@
-import { NgModule, Component} from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Routes } from '@angular/router';
 //Components
 import { HanhayaComponent } from './hanhaya/hanhaya.component';
 import { AppComponent } from './app.component';
@@ -19,12 +20,14 @@ import { BulletsService } from './services/bullets/bullets.service';
 //modals
 
 //Modules
-import {HttpModule} from '@angular/http';
-import { FormsModule }   from '@angular/forms';
-import { AlertModule } from 'ngx-bootstrap';
-import {RouterModule, Routes} from '@angular/router';
-import { DataTablesModule } from 'angular-datatables';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+import { AlertModule } from 'ngx-bootstrap';
+import { DataTablesModule } from 'angular-datatables';
+import { AddHanhayaModalComponent } from './modals/add-hanhaya-modal/add-hanhaya-modal.component';
+
 
 
 
@@ -36,6 +39,8 @@ const appRoute:Routes=[
   {path:'faults',component: FaultsComponent}
 ];
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +51,7 @@ const appRoute:Routes=[
     HanhayotComponent,
     FaultsComponent,
     HanhayaComponent,
+    AddHanhayaModalComponent,
     
   ],
   imports: [
@@ -54,6 +60,7 @@ const appRoute:Routes=[
     HttpModule,
     FormsModule,
     DataTablesModule,
+    NgbModule.forRoot(),
   ],
   providers: [
     BulletsService,
@@ -64,3 +71,4 @@ const appRoute:Routes=[
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

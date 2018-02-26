@@ -4,7 +4,9 @@
 .float_right{
     float: right;
 }
-
 .buttons_bar{
-    padding-bottom: 2%;
+    margin-top: 2%;
+    margin-left: 0%;
+    padding-bottom: 5%;
 }
+

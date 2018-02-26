@@ -1,8 +1,7 @@
 <div class="buttons_bar">
-    <button class="btn btn-success add_bullet_btn" (click)="addNew()">הנחייה חדשה</button>
+    <app-add-hanhaya-modal></app-add-hanhaya-modal>
 </div>
 <br>
-<app-add-hanhaya-modal></app-add-hanhaya-modal>
 <ul>
     <li *ngFor="let hanhaya of this.hanhayot">
         <div class=hanhaya_item>

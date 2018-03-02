@@ -77,6 +77,7 @@ textarea{
     float: left;
     width: 7%;
     height: 100%;
+    margin-left: 1%;
 }
 
 .save_bullet_btn, .edit_bullet_btn, .remove_bullet_btn{

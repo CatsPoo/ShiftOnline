@@ -30,11 +30,14 @@ module.exports.getAllHanhayot=function(callback){
 }
 
 module.exports.removeHanhaya=function(id,callback){
-//TODO remove the bullet by it's id
+    //TODO remove the bullet by it's id
+    console.log(id);
+    this.findById(id).remove(callback);
 }
 
 module.exports.saveHanhaya=function (id,content,callback){
     //TODO set the new content of hanhaya by id
+
 }
 
 module.exports.addNewHanhaya=function(newHanhaya,callback){

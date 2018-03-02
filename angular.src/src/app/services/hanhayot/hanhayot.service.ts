@@ -32,7 +32,7 @@ export class HanhayotService {
   removeHanhayot(hanhayaID){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');
-      return this.http.post(this.url+'removeBullet', {id: hanhayaID}, { headers: headers}).map(res=>res.json());
+      return this.http.post(this.url+'removeHanhaya', {id: hanhayaID}, { headers: headers}).map(res=>res.json());
   }
 
   addHanhayot(newHanhaya){

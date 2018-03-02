@@ -23,7 +23,6 @@ export class HanhayotComponent implements OnInit {
 
     this.hanhayotService.getHanhayot().subscribe(res => {
       res.hanhayot.forEach(element => {
-        console.log(element);
         let tempHanhaya = new Hanhaya(element.name,element.startDate,element.endDate,element.content);
         tempHanhaya.id = element._id;
         this.hanhayot.push(tempHanhaya);
@@ -41,6 +40,9 @@ export class HanhayotComponent implements OnInit {
         this.hanhayot.push(tempHanhaya);
       }
     });
+  }
+  handleRemoveClick(hanhaya:Hanhaya){
+    this.hanhayot.splice(this.hanhayot.indexOf(hanhaya),1);
   }
 
 

@@ -11,17 +11,17 @@ export class HanhayaComponent implements OnInit {
 
   @Input('data') hanhaya: Hanhaya;
   @Input('today') today: Date;
-  @Output('removeBulletClick') removeBulletClick = new EventEmitter();
+  @Output('removeHanhayaClick') removeHanhayaClick = new EventEmitter();
 
   private currentContent = 0;
 
   private readOnly:boolean=true;
   
-  private bulletsService: HanhayotService;
+  private hanhayotService: HanhayotService;
   private hanhayaContentValue:string;
 
   constructor(bulletsService: HanhayotService) {
-    this.bulletsService = bulletsService;
+    this.hanhayotService = bulletsService;
     
   }
 
@@ -30,15 +30,15 @@ export class HanhayaComponent implements OnInit {
     this.hanhayaContentValue=this.hanhaya.content;
   }
 
-  /*removeBullet(bellet) {
-    this.bulletsService.removeHanhaya(bellet._id).subscribe(res => {
+  removeHanhaya(hanhaya) {
+    this.hanhayotService.removeHanhayot(hanhaya._id).subscribe(res => {
       console.log(res.msg);
       if (res.succsess) {
         //remove seccess from the db
-        this.removeBulletClick.emit(this.hanhaya);
+        this.removeHanhayaClick.emit(this.hanhaya);
       }
     });
-  }*/
+  }
 
   saveBullet(bullet) {
     

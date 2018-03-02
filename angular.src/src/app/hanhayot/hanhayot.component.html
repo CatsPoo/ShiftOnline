@@ -5,7 +5,7 @@
 <ul>
     <li *ngFor="let hanhaya of this.hanhayot">
         <div class=hanhaya_item>
-            <app-hanhaya (removeBulletClick)="handleRemoveClick($event)" [data]="hanhaya" [today]="this.today"></app-hanhaya>
+            <app-hanhaya (removeHanhayaClick)="handleRemoveClick($event)" [data]="hanhaya" [today]="this.today"></app-hanhaya>
         </div>
     </li>
 </ul>

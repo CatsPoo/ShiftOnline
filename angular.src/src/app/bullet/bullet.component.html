@@ -8,7 +8,8 @@
                                 <div class="current_contect_update_time">
                                         <button class="btn right_arrow" (click)="newerContent()"> > </button>
                                         <span class="current_contect_update_time_tag">{{bullet.content[currentContent]._updateTime._day}}/{{bullet.content[currentContent]._updateTime._mounth}}/{{bullet.content[currentContent]._updateTime._year}}</span>
-                                        <button class="btn left_arrow" (click)="olderContent()"> < </button>
+                                        <button class="btn left_arrow" (click)="olderContent()">
+                                                < </button>
                                 </div>
                         </div>
 
@@ -18,22 +19,22 @@
                                         <span class="creation_time__value" id="creation_time_{{bullet.id}}">{{bullet.dateOfCreation}}</span>
                                 </div>
                                 <div class="last_update">
-                                                <label class="last_update_tag">עדכון אחרון: </label>
-                                                <span class="last_update_value" NgModa id="last_update_{{bullet.id}}">{{bullet.lastUpdate}}</span>
-                                        </div>
+                                        <label class="last_update_tag">עדכון אחרון: </label>
+                                        <span class="last_update_value" NgModa id="last_update_{{bullet.id}}">{{bullet.lastUpdate}}</span>
+                                </div>
                         </div>
 
                 </div>
-                <textarea  rows="5" [(ngModel)]="bulletContentValue"></textarea>
+                <textarea rows="5" [(ngModel)]="bulletContentValue"></textarea>
         </div>
         <div class="bullet_settings">
-                        <button class="btn btn-sm btn-primary save_bullet_btn" id="save_bullet_{{bullet.id}}" (click)="saveBullet(bullet)">
-                                <span>שמירה</span>
-                        </button>
-                        <br>
-                        <button class="btn btn-sm btn-danger remove_bullet_btn" id="remove_bullet_{{bullet.id}}" (click)="removeBullet(bullet)">
-                                <span>מחיקה</span>
-                        </button>
-                        
-                </div>
+                <button class="btn btn-sm btn-primary save_bullet_btn" id="save_bullet_{{bullet.id}}" (click)="saveBullet(bullet)">
+                        <span>שמירה</span>
+                </button>
+                <br>
+                <button class="btn btn-sm btn-danger remove_bullet_btn" id="remove_bullet_{{bullet.id}}" (click)="removeBullet(bullet)">
+                        <span>מחיקה</span>
+                </button>
+
+        </div>
 </div>

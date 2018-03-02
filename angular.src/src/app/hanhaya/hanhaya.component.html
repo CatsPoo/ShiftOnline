@@ -3,7 +3,7 @@
           <div class="labels">
                   <div class="labels_on_left">
                           <div class="name">
-                                  <span>{{hanhaya.name}}</span>
+                                  <span class="name_txt">{{hanhaya.name}}</span>
                           </div>
                   </div>
 
@@ -21,4 +21,15 @@
           </div>
           <textarea  rows="3" [(ngModel)]="hanhayaContentValue"></textarea>
   </div>
+  <div class="hanhaya_settings">
+                <button class="btn btn-sm btn-primary save_bullet_btn" id="save_hanhaya_{{hanhaya.id}}" (click)="saveHanhaya(hanhaya)">
+                        <span>שמירה</span>
+                </button>
+                <br>
+                <button class="btn btn-sm btn-danger remove_bullet_btn" id="remove_hanhaya_{{hanhaya.id}}" (click)="removeHanhaya(hanhaya)">
+                        <span>מחיקה</span>
+                </button>
+
+        </div>
+  
   

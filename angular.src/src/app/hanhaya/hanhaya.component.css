@@ -15,6 +15,7 @@
     font-size: 20px;
 }
 
+
 .labels_on_right{
     direction: rtl;
     widows: 95%;
@@ -63,9 +64,10 @@ textarea{
 
 .hanhaya_settings{
     margin-top: 4.5%;
-    float: left;
+    float: right;
     width: 7%;
     height: 100%;
+    margin-right: 1%;
 }
 
 .save_hanhaya_btn, .edit_hanhaya_btn, .remove_hanhaya_btn{

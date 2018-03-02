@@ -1,0 +1,23 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="add-hanhaya-header">הוספת איוונט</h4>
+      <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <!--body here -->
+      <div class="name_row">
+        <label>שם ההנחיה</label>
+        <input #textbox type="text" [(ngModel)]="BulletName">
+      </div>
+      <p>{{this.error}}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="Click('Close')">ביטול</button>
+      <button type="button" class="btn btn-outline-dark" (click)="Click('Add')">הוספה</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-md btn-success" (click)="open(content)">הוספת הנחייה</button>
+  

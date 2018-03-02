@@ -35,9 +35,9 @@ export class BulletsListComponent implements OnInit {
   ngOnInit() {
   }
 
-  addBullet() {
+  addBullet(name) {
 
-    let newBullet: Bullet = new Bullet('New bullet', this.today.toString(), this.today.toString(), 'green', [new BulletContent(this.today, '')]);//create new bullet with the new data
+    let newBullet: Bullet = new Bullet(name, this.today.toString(), this.today.toString(), 'green', [new BulletContent(this.today, '')]);//create new bullet with the new data
     this.bulletsService.addBullet(newBullet).subscribe(res => {//push the bullet to the server
       console.log(res.msg);//print the response
       if (res.succsess) {
@@ -51,6 +51,10 @@ export class BulletsListComponent implements OnInit {
   handleRemoveClick(bullet){
     let index = this.bullets.indexOf(bullet); //remove bullet from the ui
     this.bullets.splice(index, 1);
+  }
+  handleModalClick(name){
+    console.log(name);
+    this.addBullet(name);
   }
   saveAllBullets() {
     this.bullets.forEach(element => {

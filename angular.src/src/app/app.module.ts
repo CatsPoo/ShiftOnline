@@ -27,6 +27,7 @@ import { HttpModule } from '@angular/http';
 import { AlertModule } from 'ngx-bootstrap';
 import { DataTablesModule } from 'angular-datatables';
 import { AddHanhayaModalComponent } from './modals/add-hanhaya-modal/add-hanhaya-modal.component';
+import { AddBulletModalComponent } from './modals/add-bullet-modal/add-bullet-modal.component';
 
 
 
@@ -52,6 +53,7 @@ const appRoute:Routes=[
     FaultsComponent,
     HanhayaComponent,
     AddHanhayaModalComponent,
+    AddBulletModalComponent,
     
   ],
   imports: [

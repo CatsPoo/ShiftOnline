@@ -66,5 +66,18 @@ router.post('/removeHanhaya',function(req,res,next){
   });
 });
 
+router.post('/updateContent',function(req,res,next){
+  let id=req.body.id;
+  let content=req.body.content;
+  hanhaya.updateContent(id,content,(err,hanhaya)=>{
+    if(err){
+      res.json({succsess: false, msg:'Failed to update hanhaya'+err});
+    }
+    else{
+      res.json({succsess: true, msg:'hanhaya updated Seccessfully'});
+    }
+  });
+});
+
 
 module.exports = router;

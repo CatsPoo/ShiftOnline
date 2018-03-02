@@ -28,7 +28,14 @@ export class HanhayotService {
     return this.http.post(this.url+'getAllHanhayot', {}, { headers: headers}).map(res=>res.json());
   
  }
-
+ updateContent(hanhayaID,content){
+  let headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  return this.http.post(this.url+'updateContent',{
+    "hanhayaID":hanhayaID,
+    "content":content
+  },{headers: headers}).map(res=>res.json());
+ }
   removeHanhayot(hanhayaID){
       let headers = new Headers();
       headers.append('Content-Type', 'application/json');

@@ -35,10 +35,12 @@ module.exports.removeHanhaya=function(id,callback){
     this.findById(id).remove(callback);
 }
 
-module.exports.saveHanhaya=function (id,content,callback){
-    //TODO set the new content of hanhaya by id
+module.exports.updateContent=function (id,content,callback){
+    console.log(content);
+    this.findById(id).update({_id:id} ,{"content": content},callback);
 
 }
+
 
 module.exports.addNewHanhaya=function(newHanhaya,callback){
     newHanhaya.save(callback);

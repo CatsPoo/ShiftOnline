@@ -1,0 +1,14 @@
+.name_row,.start_date-row,.end_date_row{
+    direction: rtl;
+    float: right;
+    width: 100%;
+}
+input{
+    margin-right: 0%;
+    float: left;
+}
+label{
+    float: right;
+}
+.add-hanhaya-header{
+}

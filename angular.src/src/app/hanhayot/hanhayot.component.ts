@@ -44,12 +44,7 @@ export class HanhayotComponent implements OnInit {
   handleRemoveClick(hanhaya:Hanhaya){
     this.hanhayot.splice(this.hanhayot.indexOf(hanhaya),1);
   }
-
-
   ngOnInit() {
-  }
-
-  addNew(){
   }
 
 }

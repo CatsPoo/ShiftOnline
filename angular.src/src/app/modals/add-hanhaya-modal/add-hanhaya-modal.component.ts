@@ -50,10 +50,10 @@ export class AddHanhayaModalComponent{
         let startDate = this.timeAndDateService.convertStringToDate(this.startDateStr)
         let result: CreateHanhayaModalData = new CreateHanhayaModalData(this.hanhayaName, startDate, endDate);
         this.OnClick.emit(result);
+        this.hanhayaName="";
+        this.startDateStr="";
+        this.endDateStr="";
       }
-    }
-    else{
-
     }
     this.ModalRef.close();
   }

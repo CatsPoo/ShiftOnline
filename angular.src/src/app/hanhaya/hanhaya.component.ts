@@ -13,7 +13,7 @@ export class HanhayaComponent implements OnInit {
   @Input('today') today: Date;
   @Output('removeHanhayaClick') removeHanhayaClick = new EventEmitter();
 
-  private currentContent = 0;
+  private Content:string;
 
   private readOnly:boolean=true;
   
@@ -26,7 +26,6 @@ export class HanhayaComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.currentContent = this.hanhaya.content.length - 1;
     this.hanhayaContentValue=this.hanhaya.content;
   }
 
@@ -40,9 +39,10 @@ export class HanhayaComponent implements OnInit {
     });
   }
 
-  saveBullet(bullet) {
-    
-
+  saveHanhaya(){
+    //change the last update without create new one
+    this.hanhayotService.updateContent(this.hanhaya.id,this.Content).subscribe(res=>{
+    }); 
   }
 
 }

@@ -37,6 +37,6 @@ module.exports.saveHanhaya=function (id,content,callback){
     //TODO set the new content of hanhaya by id
 }
 
-module.exports.addNewHanhaya=function(hanhaya,callback){
-    
+module.exports.addNewHanhaya=function(newHanhaya,callback){
+    newHanhaya.save(callback);
 }

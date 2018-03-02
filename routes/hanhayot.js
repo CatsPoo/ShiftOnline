@@ -34,10 +34,10 @@ router.post('/addHanhaya', function(req, res, next) {
   });
   hanhaya.addNewHanhaya(newHanhaya,(err,bullet)=>{
     if(err){
-      res.json({succsess: false, msg:'Failed to add bullet  <br>'+err});
+      res.json({succsess: false, msg:'Failed to add hanhaya  <br>'+err});
     }
     else{
-      res.json({succsess: true, msg:'Bullet added',id:bullet.id});
+      res.json({succsess: true, msg:'Hanhaya added',id:bullet.id});
     }
   });
 });

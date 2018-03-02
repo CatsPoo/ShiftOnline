@@ -23,15 +23,24 @@ export class HanhayotComponent implements OnInit {
 
     this.hanhayotService.getHanhayot().subscribe(res => {
       res.hanhayot.forEach(element => {
-        let tempHanhaya = new Hanhaya(element._name,new Date(1,1,1), new Date(2,3,2),element._content);
+        console.log(element);
+        let tempHanhaya = new Hanhaya(element.name,element.startDate,element.endDate,element.content);
         tempHanhaya.id = element._id;
         this.hanhayot.push(tempHanhaya);
       });
     });
   }
 
-  onChanged(result:CreateHanhayaModalData){
-    //console.log(result);
+  onAddClicked(result:CreateHanhayaModalData){
+    let tempHanhaya:Hanhaya=new Hanhaya(result.name,result.startDate.toString(),result.endDate.toString(),"");
+    //this.hanhayot.push(tempHanhaya);
+    this.hanhayotService.addHanhayot(tempHanhaya).subscribe(res => {//push the hanhaya to the server
+      console.log(res.msg);//print the response
+      if (res.succsess) {
+        tempHanhaya.id = res.id; //get the id from the server
+        this.hanhayot.push(tempHanhaya);
+      }
+    });
   }
 
 

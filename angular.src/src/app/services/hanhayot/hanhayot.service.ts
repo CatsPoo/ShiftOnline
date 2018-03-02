@@ -38,7 +38,7 @@ export class HanhayotService {
   addHanhayot(newHanhaya){
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    return this.http.post(this.url+'addBullet', {
+    return this.http.post(this.url+'addHanhaya', {
       "name": newHanhaya.name,
       "startDate": newHanhaya.startDate,
       "endDate": newHanhaya.endDate,
@@ -51,10 +51,11 @@ export class HanhayotService {
 export class Hanhaya{
   private _id:number;
   private _color:string;
+  private _index:number;
   constructor(
     private _name:string,
-    private _startDate:Date,
-    private _endDate:Date,
+    private _startDate:string,
+    private _endDate:string,
     private _content:string){}
 
     get id(){return this._id;}
@@ -63,10 +64,12 @@ export class Hanhaya{
     get endDate(){return this._endDate;}
     get content(){return this._content;}
     get color(){return this._color;}
+    get index(){return this._index;}
 
     set id(value:number){this._id=value;}
     set name(value:string){this._name=value;}
-    set endDate(value:Date){this._endDate=value;}
+    set endDate(value:string){this._endDate=value;}
+    set index(value:number){this._index=value;}
 }
 
 export class CreateHanhayaModalData{

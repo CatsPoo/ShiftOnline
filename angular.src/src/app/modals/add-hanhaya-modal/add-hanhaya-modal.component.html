@@ -7,11 +7,24 @@
   </div>
   <div class="modal-body">
     <!--body here -->
-
+    <div clss="name">
+      <label>שם ההנחיה</label>
+      <input #textbox type="text" [(ngModel)]="hanhayaName">
+    </div>
+    <div class="start_date-row">
+      <label>תאריך התחלה</label>
+      <input #textbox type="text" [(ngModel)]="startDateStr">
+    </div>
+    <br>
+    <div class="end_date_row">
+      <label>תאריך סיום</label>
+      <input #textbox type="text" [(ngModel)]="endDateStr">
+    </div>
+    <p>{{this.error}}</p>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">ביטול</button>
-    <button type="button" class="btn btn-outline-dark" (click)="c('Close click')">הוספה</button>
+    <button type="button" class="btn btn-outline-dark" (click)="Click('Close')">ביטול</button>
+    <button type="button" class="btn btn-outline-dark" (click)="Click('Add')">הוספה</button>
   </div>
 </ng-template>
 

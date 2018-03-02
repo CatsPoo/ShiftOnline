@@ -67,7 +67,12 @@ export class Hanhaya{
     set id(value:number){this._id=value;}
     set name(value:string){this._name=value;}
     set endDate(value:Date){this._endDate=value;}
+}
 
-
+export class CreateHanhayaModalData{
+  constructor(private _name:string,private _startDate:Date,private _endDate:Date){}
+  get name(){return this._name;}
+  get startDate(){return this._startDate;}
+  get endDate(){return this._endDate;}
 
 }

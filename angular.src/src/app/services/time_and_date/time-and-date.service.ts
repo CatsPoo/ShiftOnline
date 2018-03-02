@@ -19,6 +19,26 @@ export class TimeAndDateService {
       .map(res => res.json());
 
   }
+
+  convertStringToDate(dateStr:string):Date{
+    let year:number;
+    let mounth:number;
+    let day:number;
+
+    let index=dateStr.indexOf('/');
+    day= +dateStr.substring(0,index);
+    dateStr=dateStr.substring(index+1,dateStr.length);
+    index=dateStr.indexOf('/');
+    mounth= +dateStr.substring(0,index);
+    dateStr=dateStr.substring(index+1,dateStr.length);
+    year=+dateStr;
+
+    console.log(year+"  "+dateStr);
+
+    return new Date(year,mounth,day);
+
+
+  }
 }
 
 export class Date{

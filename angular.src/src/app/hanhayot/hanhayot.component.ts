@@ -1,6 +1,6 @@
 import { AddHanhayaModalComponent } from './../modals/add-hanhaya-modal/add-hanhaya-modal.component';
 import { OnInit, Component } from '@angular/core';
-import { HanhayotService, Hanhaya } from './../services/hanhayot/hanhayot.service';
+import { HanhayotService, Hanhaya, CreateHanhayaModalData } from './../services/hanhayot/hanhayot.service';
 import { TimeAndDateService, Date } from './../services/time_and_date/time-and-date.service';
 
 
@@ -28,6 +28,10 @@ export class HanhayotComponent implements OnInit {
         this.hanhayot.push(tempHanhaya);
       });
     });
+  }
+
+  onChanged(result:CreateHanhayaModalData){
+    //console.log(result);
   }
 
 

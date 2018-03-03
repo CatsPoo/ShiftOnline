@@ -2,7 +2,7 @@
 .buttons_bar{
     margin-top: 2%;
     margin-left: 3%;
-    padding-bottom: 2%;
+    padding-bottom: 0;
 }
 .add_bullet_btn{
     float: left;
@@ -30,4 +30,9 @@ li{
 
 ul{
     padding-bottom: 30%;
+}
+
+.message{
+  text-align: center;
+  margin-top: 3%;
 }

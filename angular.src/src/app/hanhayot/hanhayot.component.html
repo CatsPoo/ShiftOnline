@@ -1,11 +1,15 @@
 <div class="buttons_bar">
     <app-add-hanhaya-modal (OnClick)="onAddClicked($event)"></app-add-hanhaya-modal>
 </div>
-<br>
-<ul>
+<ul *ngIf="this.hanhayot.length>0; else emptyList">
     <li *ngFor="let hanhaya of this.hanhayot">
         <div class=hanhaya_item>
             <app-hanhaya (removeHanhayaClick)="handleRemoveClick($event)" [data]="hanhaya" [today]="this.today"></app-hanhaya>
         </div>
     </li>
 </ul>
+<ng-template #emptyList>
+    <div class="empty-list-message">
+        <h2 class="message">אין הנחיות פתוחות</h2>
+    </div>
+</ng-template>

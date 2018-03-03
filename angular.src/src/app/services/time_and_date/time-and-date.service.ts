@@ -33,11 +33,28 @@ export class TimeAndDateService {
     dateStr=dateStr.substring(index+1,dateStr.length);
     year=+dateStr;
 
-    console.log(year+"  "+dateStr);
-
     return new Date(year,mounth,day);
 
 
+  }
+
+  isAvailableDate(dateStr: string): boolean {
+
+    if(dateStr.length>10) return false;
+
+    for(let i=0;i<dateStr.length;i++){
+      
+      if(dateStr[i]>='0'&&dateStr[i]<='9')continue;
+      else if(dateStr[i]=="/") continue;
+      else return false;
+    }
+
+    let date=this.convertStringToDate(dateStr);
+    //check for errors
+    if (date.day < 0 || date.day > 31) return false;
+    if (date.mounth < 0 || date.mounth > 12) return false;
+
+    return true;
   }
 }
 

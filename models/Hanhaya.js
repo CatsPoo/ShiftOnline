@@ -36,8 +36,8 @@ module.exports.removeHanhaya=function(id,callback){
 }
 
 module.exports.updateContent=function (id,content,callback){
-    console.log(content);
-    this.findById(id).update({_id:id} ,{"content": content},callback);
+    console.log(id+"    $$$$$$$$"+content);
+    this.findById(id).update({_id:id} ,{$set:{"content": content}},callback);
 
 }
 

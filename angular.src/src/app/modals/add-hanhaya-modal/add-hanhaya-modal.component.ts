@@ -41,7 +41,12 @@ export class AddHanhayaModalComponent{
     if (status == 'Add') {
       if(this.startDateStr==""||this.endDateStr=="")
       {
-        this.error="One or more feilds are missing";
+        this.error="אחד או יותר מהשדות חסרים";
+        return;
+      }
+      else if(!this.timeAndDateService.isAvailableDate(this.startDateStr)||!this.timeAndDateService.isAvailableDate(this.endDateStr))
+      {
+        this.error="תאריך אינו תקין";
         return;
       }
       else {

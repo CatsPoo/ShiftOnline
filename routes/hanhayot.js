@@ -67,7 +67,7 @@ router.post('/removeHanhaya',function(req,res,next){
 });
 
 router.post('/updateContent',function(req,res,next){
-  let id=req.body.id;
+  let id=req.body.hanhayaID;
   let content=req.body.content;
   hanhaya.updateContent(id,content,(err,hanhaya)=>{
     if(err){

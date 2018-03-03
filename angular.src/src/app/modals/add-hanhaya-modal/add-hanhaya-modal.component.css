@@ -10,5 +10,13 @@ input{
 label{
     float: right;
 }
+.modal-header{
+    width: 100%;
+    direction: rtl;
+
+
+}
 .add-hanhaya-header{
+    float: right;
+    text-align: center;
 }

@@ -10,3 +10,13 @@ input{
 label{
     float: right;
 }
+.modal-header{
+    width: 100%;
+    direction: rtl;
+
+
+}
+.add-bullet-header{
+    float: right;
+    text-align: center;
+}

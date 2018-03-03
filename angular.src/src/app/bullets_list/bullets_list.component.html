@@ -4,7 +4,7 @@
     <app-add-bullet-modal (OnClick)="handleModalClick($event)"></app-add-bullet-modal>
     <button class="btn btn-primary save_all_bullets_btn" (click)="saveAllBullets()">Save all bullets</button>
 </div>
-<ul *ngIf="this.hanhayot.length>0; else emptyList">
+<ul *ngIf="this.bullets.length>0; else emptyList">
     <li *ngFor="let bullet of this.bullets">
         <div class=bullet_item>
             <app-bullet (removeBulletClick)="handleRemoveClick($event)" [bulletData]="bullet" [today]="this.today"></app-bullet>

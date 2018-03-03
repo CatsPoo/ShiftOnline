@@ -1,4 +1,4 @@
-import { HanhayotService, Hanhaya } from './../services/hanhayot/hanhayot.service';
+import { HanhayotService, Hanhaya, CreateHanhayaModalData } from './../services/hanhayot/hanhayot.service';
 import { Date } from './../services/time_and_date/time-and-date.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -44,6 +44,10 @@ export class HanhayaComponent implements OnInit {
     this.hanhayotService.updateContent(this.hanhaya.id,this.Content).subscribe(res=>{
       console.log(res.msg);
     }); 
+  }
+
+  handleUpdateClick(hanhaya:CreateHanhayaModalData){
+    console.log(hanhaya);
   }
 
 }

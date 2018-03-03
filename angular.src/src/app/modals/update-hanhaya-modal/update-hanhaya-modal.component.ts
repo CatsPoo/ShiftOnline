@@ -1,17 +1,22 @@
+import { Hanhaya, CreateHanhayaModalData } from './../../services/hanhayot/hanhayot.service';
 import { NgbModal, NgbModalRef, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { TimeAndDateService } from './../../services/time_and_date/time-and-date.service';
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-update-hanhaya-modal',
   templateUrl: './update-hanhaya-modal.component.html',
   styleUrls: ['./update-hanhaya-modal.component.css']
 })
-export class UpdateHanhayaModalComponent {
+export class UpdateHanhayaModalComponent implements OnInit{
 
   closeResult: string;
-  @Output() OnClick= new EventEmitter();
-  private BulletName:string="";
+  @Output() OnClick= new EventEmitter<CreateHanhayaModalData>();
+  @Input('hanhayaData') hanhaya:Hanhaya;
+
+  private HanhayaName:string="";
+  private HanhayaStartDate:string="";
+  private HanhayaEndDate:string="";
 
   private error="";
 
@@ -19,6 +24,11 @@ export class UpdateHanhayaModalComponent {
 
   private ModalRef: NgbModalRef;
   
+  ngOnInit(){
+    this.HanhayaName=this.hanhaya.name;
+    this.HanhayaStartDate=this.hanhaya.startDate;
+    this.HanhayaEndDate=this.hanhaya.endDate;
+  }
   open(content) {
     this.ModalRef=this.modalService.open(content);
     this.ModalRef.result.then((result) => {
@@ -29,15 +39,23 @@ export class UpdateHanhayaModalComponent {
   }
 
   Click(status: string) {
-    if (status == 'Add') {
-      if(this.BulletName=="")
+    if (status == 'Update') {
+      if(this.HanhayaName==""||this.HanhayaStartDate==""||this.HanhayaEndDate=="")
       {
-        this.error="One or more feilds are missing";
+        this.error="אחד או יותר מהשדות חסרים";
+        return;
+      }
+      else if(!this.timeAndDateService.isAvailableDate(this.HanhayaStartDate)||!this.timeAndDateService.isAvailableDate(this.HanhayaEndDate))
+      {
+        this.error="תאריך אינו תקין";
         return;
       }
       else {
         this.error="";
-        this.OnClick.emit(this.BulletName);
+        let startDate=this.timeAndDateService.convertStringToDate(this.HanhayaStartDate);
+        let endDate=this.timeAndDateService.convertStringToDate(this.HanhayaEndDate);
+        let temp:CreateHanhayaModalData=new CreateHanhayaModalData(this.HanhayaName,startDate,endDate);
+        this.OnClick.emit(temp);
       }
     }
     this.ModalRef.close();

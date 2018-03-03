@@ -6,8 +6,17 @@
       <!--body here -->
       <div class="name_row">
         <label>שם</label>
-        <input #textbox type="text" [(ngModel)]="BulletName">
+        <input #textbox type="text" [(ngModel)]="HanhayaName">
       </div>
+      <div class="start_date-row">
+          <label>תאריך התחלה</label>
+          <input #textbox type="text" [(ngModel)]="HanhayaStartDate">
+        </div>
+        <br>
+        <div class="end_date_row">
+          <label>תאריך סיום</label>
+          <input #textbox type="text" [(ngModel)]="HanhayaEndDate">
+        </div>
       <p>{{this.error}}</p>
     </div>
     <div class="modal-footer">

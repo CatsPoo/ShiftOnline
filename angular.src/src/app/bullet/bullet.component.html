@@ -35,6 +35,8 @@
                 <button class="btn btn-sm btn-danger remove_bullet_btn" id="remove_bullet_{{bullet.id}}" (click)="removeBullet(bullet)">
                         <span>מחיקה</span>
                 </button>
+                <br>
+                <app-update-bullet-modal (OnClick)="handleUpdateClick($event)" [bulletData]="bullet"></app-update-bullet-modal>
 
         </div>
 </div>

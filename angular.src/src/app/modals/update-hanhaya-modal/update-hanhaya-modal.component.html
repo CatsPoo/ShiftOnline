@@ -1,0 +1,20 @@
+<ng-template #content let-c="close" let-d="dismiss">
+    <div class="modal-header">
+      <h4 class="update-hanhaya-header">עריכת הנחיה</h4>
+    </div>
+    <div class="modal-body">
+      <!--body here -->
+      <div class="name_row">
+        <label>שם</label>
+        <input #textbox type="text" [(ngModel)]="BulletName">
+      </div>
+      <p>{{this.error}}</p>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="Click('Update')">עריכה</button>
+      <button type="button" class="btn btn-outline-dark" (click)="Click('Close')">ביטול</button>
+    </div>
+  </ng-template>
+  
+  <button class="btn btn-md btn-success" (click)="open(content)">עריכה</button>
+  

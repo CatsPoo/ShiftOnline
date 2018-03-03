@@ -74,4 +74,8 @@ export class BulletComponent implements OnInit {
 
   }
 
+  handleUpdateClick(newName:string){
+    
+  }
+
 }

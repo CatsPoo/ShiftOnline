@@ -79,5 +79,21 @@ router.post('/updateContent',function(req,res,next){
   });
 });
 
+router.post('/updateHanhaya',function(req,res,next){
+  let id=req.body.hanhayaID;
+  let name=req.body.name;
+  let startDate=req.body.startDate;
+  let endDate=req.body.endDate;
+
+  hanhaya.updateHanhaya(id,name,startDate,endDate,(err,hanhaya)=>{
+    if(err){
+      res.json({succsess: false, msg:'Failed to update hanhaya'+err});
+    }
+    else{
+      res.json({succsess: true, msg:'hanhaya updated Seccessfully'});
+    }
+  });
+});
+
 
 module.exports = router;

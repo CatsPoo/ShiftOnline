@@ -53,6 +53,11 @@ module.exports.updateTodayContentOfBullet = function(bulletID, content, callback
 }
 module.exports.updateLastUpdate = function(bulletID, lastUpdate, callback) {
     let lastUpdateString = lastUpdate._day + "/" + lastUpdate._mounth + "/" + lastUpdate._year;
-    this.findById(bulletID).update({ _id: bulletID }, { $set: { "lastUpdate": lastUpdateString } }, (err, res) => {});
+    this.findById(bulletID).update({ _id: bulletID }, { $set: { "lastUpdate": lastUpdateString } }, callback);
+
+}
+module.exports.updateNewName = function(bulletID, newName, callback) {
+    console.log(newName);
+    this.findById(bulletID).update({ _id: bulletID }, { $set: { "name": newName } }, callback);
 
 }

@@ -36,9 +36,14 @@ module.exports.removeHanhaya=function(id,callback){
 }
 
 module.exports.updateContent=function (id,content,callback){
-    console.log(id+"    $$$$$$$$"+content);
     this.findById(id).update({_id:id} ,{$set:{"content": content}},callback);
 
+}
+
+module.exports.updateHanhaya=function(id,name,startDate,endDate,callback){
+    
+  console.log(id+"\n"+name+"\n"+startDate+"\n"+endDate);
+    this.findById(id).update({_id:id} ,{$set:{"name": name, "startDate":startDate,"endDate":endDate}},callback);
 }
 
 

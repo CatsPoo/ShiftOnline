@@ -1,7 +1,8 @@
-import { Date } from './../services/time_and_date/time-and-date.service';
+import { Date, TimeAndDateService } from './../services/time_and_date/time-and-date.service';
 import { BulletsListComponent } from './../bullets_list/bullets_list.component';
 import { Bullet, BulletsService, BulletContent } from './../services/bullets/bullets.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Time } from 'ngx-bootstrap/timepicker/timepicker.models';
 
 @Component({
   selector: 'app-bullet',
@@ -75,7 +76,9 @@ export class BulletComponent implements OnInit {
   }
 
   handleUpdateClick(newName:string){
-    
+    this.bulletsService.updateName(this.bullet.id,newName).subscribe(res=>{
+      this.bullet.name=newName;
+    });
   }
 
 }

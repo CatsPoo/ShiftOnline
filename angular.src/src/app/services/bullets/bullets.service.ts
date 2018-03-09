@@ -56,6 +56,15 @@ export class BulletsService {
     },{headers: headers}).map(res=>res.json());
   }
 
+  updateName(bulletID:string,newName:string){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.url+'updatenewName',{
+      "bulletID":bulletID,
+      "newName":newName
+    },{headers: headers}).map(res=>res.json());
+  }
+
 }
 
 export class Bullet{

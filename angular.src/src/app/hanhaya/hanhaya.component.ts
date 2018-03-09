@@ -1,5 +1,5 @@
 import { HanhayotService, Hanhaya, CreateHanhayaModalData } from './../services/hanhayot/hanhayot.service';
-import { Date } from './../services/time_and_date/time-and-date.service';
+import { Date, TimeAndDateService } from './../services/time_and_date/time-and-date.service';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -46,8 +46,12 @@ export class HanhayaComponent implements OnInit {
     }); 
   }
 
-  handleUpdateClick(hanhaya:CreateHanhayaModalData){
-    console.log(hanhaya);
+  handleUpdateClick(hanhayaData:CreateHanhayaModalData){
+    this.hanhayotService.updateHanhaya(this.hanhaya.id,hanhayaData).subscribe(res=>{
+      this.hanhaya.name=hanhayaData.name;
+      this.hanhaya.startDate=hanhayaData.startDate.toString();
+      this.hanhaya.endDate=hanhayaData.endDate.toString();
+    });
   }
 
 }

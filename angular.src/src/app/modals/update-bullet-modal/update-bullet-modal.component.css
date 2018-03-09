@@ -22,3 +22,8 @@ label{
     float: right;
     text-align: center;
 }
+.btn-update{
+    width: 94%;
+    height: 40%;
+    text-align-last: center;
+}

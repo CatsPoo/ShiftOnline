@@ -53,6 +53,18 @@ export class HanhayotService {
       "content": newHanhaya.content}
        , { headers: headers}).map(res=>res.json());
   }
+
+  updateHanhaya(hanhayaID,hanhayaData:CreateHanhayaModalData){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(this.url+'updateHanhaya', {
+      "hanhayaID":hanhayaID,
+      "name": hanhayaData.name,
+      "startDate": hanhayaData.startDate.toString(),
+      "endDate": hanhayaData.endDate.toString(),
+      "color": "red"}
+       , { headers: headers}).map(res=>res.json());
+  }
 }
 
 export class Hanhaya{
@@ -75,6 +87,7 @@ export class Hanhaya{
 
     set id(value:number){this._id=value;}
     set name(value:string){this._name=value;}
+    set startDate(value:string){this._startDate=value;}
     set endDate(value:string){this._endDate=value;}
     set index(value:number){this._index=value;}
 }

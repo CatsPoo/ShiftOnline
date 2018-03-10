@@ -1,3 +1,4 @@
+import { GlobalDataService } from './services/global-data/global-data.service';
 import { FormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Routes } from '@angular/router';
@@ -30,6 +31,7 @@ import { AddHanhayaModalComponent } from './modals/add-hanhaya-modal/add-hanhaya
 import { AddBulletModalComponent } from './modals/add-bullet-modal/add-bullet-modal.component';
 import { UpdateBulletModalComponent } from './modals/update-bullet-modal/update-bullet-modal.component';
 import { UpdateHanhayaModalComponent } from './modals/update-hanhaya-modal/update-hanhaya-modal.component';
+import { AddFaultModalComponent } from './modals/add-fault-modal/add-fault-modal.component';
 
 
 
@@ -58,6 +60,7 @@ const appRoute:Routes=[
     AddBulletModalComponent,
     UpdateBulletModalComponent,
     UpdateHanhayaModalComponent,
+    AddFaultModalComponent,
     
   ],
   imports: [
@@ -72,7 +75,8 @@ const appRoute:Routes=[
     BulletsService,
     TimeAndDateService,
     FaultService,
-    HanhayotService
+    HanhayotService,
+    GlobalDataService
   ],
   bootstrap: [AppComponent]
 })

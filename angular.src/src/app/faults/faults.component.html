@@ -1,5 +1,5 @@
 <div class="buttons_bar">
-    <button class="btn btn-danger add_bullet_btn" (click)="aa()">הוספת תקלה</button>
+    <app-add-fault-modal></app-add-fault-modal>
 </div>
 <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class=" data row-border hover ">
   <thead class="">
@@ -7,11 +7,13 @@
       <th>#</th>
       <th>בסיס</th>
       <th>אתר/טייסת</th>
+      <th>מערכת</th>
       <th>שרדות/השבתה</th>
       <th>שעת התחלה</th>
       <th>שעת סיום</th>
       <th>איש קשר בבסיס</th>
-      <th>הערות</th> 
+      <th>הערות</th>
+      <th>אפשרויות</th> 
     </tr>
   </thead>
   <tbody>
@@ -19,6 +21,7 @@
       <td>{{ fault.id }}</td>
       <td>{{ fault.base }}</td>
       <td>{{ fault.site }}</td>
+      <td>{{fault.system}}</td>
       <td>
         <div *ngIf="!fault.state; else disables">ירידה בשרידות</div>
         <ng-template #disables>השבתה</ng-template>
@@ -27,6 +30,7 @@
       <td>{{ fault.endTime }}</td>
       <td>{{ fault.contact }}</td>
       <td>{{ fault.remarks }}</td> 
+      <td></td>
     </tr>
   </tbody>
   </table>

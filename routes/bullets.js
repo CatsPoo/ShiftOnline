@@ -53,7 +53,7 @@ router.post('/addNewContentToBullet',function(req,res,next){
     else   res.json({seccess:true,msg:'new content added to the bullet'});
   });
   bullet.updateLastUpdate(req.body.bulletID,req.body.contentUpdateTime,(err,dbRes)=>{
-    if(err||error){  res.json({seccess:false,msg:'Failed to add new content to the bullet'});}
+    if(err){  res.json({seccess:false,msg:'Failed to add new content to the bullet'});}
     else   res.json({seccess:true,msg:'new content added to the bullet'});
   });
 

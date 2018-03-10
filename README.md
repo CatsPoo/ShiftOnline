@@ -1,27 +1,53 @@
 # ShiftOnline
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
+כלי חדש להעברת משמרת
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# כרגע עובד
+## בחלון האיוונטים:
+-הוספת איוונט
+-הצגת כול האיוונטים
+-הכלפה בין תאריכים של איוונט
+-מחיקת איוונט
+-עריכת איוונט (שם האיוונט)
+-שמירת התוכן כך שבמידה ועבר יום יווצר תוכן חדש ובמידה ולא יערך התוכן הקיים.
 
-## Code scaffolding
+## בחלון ההנחיות:
+-הצגת כול ההנחיות
+-הוספת הנחייה
+-עריכת הנחייה (שם, תאריך התחלה ותאריך סיום)
+-מחיקת הנחייה
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## בחלון התקלות:
+-פתיחת חלונית להוספת תקלה (לא מוסיף עדיין)
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+# בפיתוח
 
-## Running unit tests
+## בחלון התקלות:
+הצגת רשימה של כול הבסיסים כשפותחים תקלה
+-הצגת רשימה של כול האתרים באותו בסיס שנבחר
+-הוספת תקלה חשה לבסיס הנתונים
+-מחיקת תקלה
+-עריכת תקלה
+-הצגת כול התקלות בצורה דינאמית
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## בחלון התקלות וההנחיות:
+-צביעת ההנחייה או הההודעה בצבע לפי בחירה
 
-## Running end-to-end tests
+## כללי:
+-הוספת אנימציון ושפור העיצוב
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+# תמונות מהאתר:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# התקנת השרת
+
+-יש להתקין node js
+- לאחר הורדת הקבצים יש לבצע את הפקודה npm install
+-npm install -g @angular/cli
+-cd angular_src
+-ng build
+-cd ..
+-node app.js

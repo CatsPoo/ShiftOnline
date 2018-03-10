@@ -1,9 +1,10 @@
-
-
-.name_row,.start_date-row,.end_date_row{
+.name_row,.start_date_row,.end_date_row,.base_row,.system_row{
     direction: rtl;
     float: right;
     width: 100%;
+}
+select{
+    width: 30%;
 }
 input{
     margin-right: 0%;
@@ -18,13 +19,7 @@ label{
 
 
 }
-.update-hanhaya-header{
+.add-bullet-header{
     float: right;
     text-align: center;
-}
-
-.btn-update{
-    width: 80%;
-    height: 10%;
-    text-align-last: center;
 }

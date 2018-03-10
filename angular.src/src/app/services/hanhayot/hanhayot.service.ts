@@ -6,7 +6,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class HanhayotService {
   private http:Http;
-  private url:String='http://localhost:3000/api/hanhayot/';
+  private url:String='http://84.108.39.139:3000/api/hanhayot/';
 
   constructor(http:Http) {
     this.http=http;

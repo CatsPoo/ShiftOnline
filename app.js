@@ -10,6 +10,7 @@ var router=express.Router();
 
 var bullets = require('./routes/bullets');
 var hanhayot= require('./routes/hanhayot');
+var globalData=require('./routes/global-data');
 //const api = require('./');
 var app = express();
 
@@ -17,6 +18,8 @@ var app = express();
 var port=3000;
 app.listen(port,function(){
   console.log("Start server on port: "+port);
+
+  //here
 });
 
 app.use(function(req,res,next){
@@ -48,7 +51,7 @@ app.get('/faults', mainPage);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(logger('common'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -56,6 +59,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/bullets', bullets);
 app.use('/api/hanhayot', hanhayot);
+app.use('/api/global-data',globalData);
 //app.use('/api', api);
 
 // catch 404 and forward to error handler

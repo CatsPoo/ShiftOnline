@@ -1,0 +1,52 @@
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="add-hanhaya-header">הוספת תקלה</h4>
+  </div>
+  <div class="modal-body">
+    <!--body here -->
+    <div class="base_row">
+      <label>בסיס</label>
+      <select>
+        <option>aaa</option>
+      </select>
+    </div>
+    <div class="site_row">
+      <label> אתר</label>
+      <select>
+        <option>aaa</option>
+      </select>
+    </div>
+    <div class="system_row">
+      <label>מערכת</label>
+      <select>
+          <option>aaa</option>
+      </select>
+    </div>
+    <div class="status_row">
+      <label>שרידות/השבתה</label>
+    </div>
+    <div class="start_date_row">
+      <label>התחלה</label>
+      <input type="date">
+    </div>
+    <div class="end_date_row">
+      <label>סיום</label>
+      <input type="date">
+    </div>
+    <div class="contact_row">
+      <label>איש קשר בבסיס</label>
+      <input type="text">
+    </div>
+    <div class="comments_row">
+      <label>הערות</label>
+      <input type="text">
+    </div>
+    <p>{{this.error}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="Click('Close')">ביטול</button>
+    <button type="button" class="btn btn-outline-dark" (click)="Click('Add')">הוספה</button>
+  </div>
+</ng-template>
+
+<button class="btn btn-md btn-danger" (click)="open(content)">הוספת תקלה</button>

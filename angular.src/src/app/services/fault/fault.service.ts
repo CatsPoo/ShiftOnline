@@ -9,11 +9,11 @@ export class FaultService { //this service used to get, update and delete faults
     let list:Fault[]=[]; //for testing generate static 10 faultes
     for(var i=1;i<6;i++)
     {
-      list.push( new Fault(i,4,101,false,new Date(2018,2,14),new Date(2018,2,14),"רון","בדיקה"));
+      list.push( new Fault(i,4,101,"ניסוי",false,new Date(2018,2,14),new Date(2018,2,14),"רון","בדיקה"));
     }
     for(var i=6;i<11;i++)
     {
-      list.push( new Fault(i,6,69,true,new Date(2018,2,20),new Date(2018,2,20),"דני","בדיקה"));
+      list.push( new Fault(i,6,69,"מבצעית",true,new Date(2018,2,20),new Date(2018,2,20),"דני","בדיקה"));
     }
     return list;
   }
@@ -26,6 +26,7 @@ export class Fault{
     private _id:number,
     private _base:number,
     private _site:number,
+    private _system:string,
     private _state:boolean, //אם התקלה משביתה או מורידה בשרידות  TRUE=משבית   FALSE=שרידות
     private _startTime:Date,
     private _endTime:Date,
@@ -35,6 +36,7 @@ export class Fault{
     get id(){return this._id;}
     get base(){return this._base;}
     get site(){return this._site;}
+    get system(){return this._system;}
     get state(){return this._state;}
     get startTime(){return this._startTime;}
     get endTime(){return this._endTime;}

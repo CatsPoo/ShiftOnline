@@ -41,6 +41,28 @@
 
 # תמונות מהאתר:
 
+### חלון איוונטים
+![default](https://user-images.githubusercontent.com/18642444/37240967-fc9d7546-245a-11e8-8b5e-27fbdc29e5cc.png)
+
+
+### הוספת איוונט
+![default](https://user-images.githubusercontent.com/18642444/37241004-4fcf559a-245b-11e8-9c8d-91fa7ac4aa7d.png)
+
+### חלון הנחיות
+![default](https://user-images.githubusercontent.com/18642444/37241018-646c04ee-245b-11e8-8192-2dd60b31c4f2.png)
+
+
+### הוספת הנחייה
+![default](https://user-images.githubusercontent.com/18642444/37241024-713f4cbc-245b-11e8-9fec-b261576f65fb.png)
+
+### חלון תקלות
+![default](https://user-images.githubusercontent.com/18642444/37241031-7be6695c-245b-11e8-9c37-3e085920e0c2.png)
+
+
+### הוספת תקלה
+![default](https://user-images.githubusercontent.com/18642444/37241036-8aa8ebc2-245b-11e8-8c80-876dfc5c1d9b.png)
+
+
 
 # התקנת השרת
 
